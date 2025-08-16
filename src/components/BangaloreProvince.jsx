@@ -396,53 +396,57 @@ At present, Sr Praveen BS serves as Superior, with Sr Ida, Sr Gliseria, and Sr C
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <ProvinceHeader />
-      
-      <ProvinceStats convents={convents} />
-      
-      <SearchBar 
-        searchTerm={searchTerm} 
-        setSearchTerm={setSearchTerm} 
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
+<div className="min-h-screen flex flex-col"> {/* Add these classes to the root div */}
+  <div className="flex-grow"> {/* Wrap all content except footer in this div */}
+    <ProvinceHeader />
+    <ProvinceStats convents={convents} />
+    
+    <SearchBar 
+      searchTerm={searchTerm} 
+      setSearchTerm={setSearchTerm} 
+      activeFilter={activeFilter}
+      setActiveFilter={setActiveFilter}
+    />
+    
+    {isLoading ? (
+      <LoadingSpinner />
+    ) : (
+      <>
+        {filteredConvents.length === 0 ? (
+          <div className="text-center py-12">
+            <h3 className="text-xl font-medium text-gray-700">No convents found matching your search</h3>
+            <p className="text-gray-500 mt-2">Try different search terms or filters</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {filteredConvents.map(convent => (
+              <ConventCard 
+                key={convent.id} 
+                convent={convent} 
+                onClick={() => setSelectedConvent(convent)}
+              />
+            ))}
+          </div>
+        )}
+      </>
+    )}
+    
+    {selectedConvent && (
+      <ConventModal 
+        convent={selectedConvent} 
+        onClose={() => setSelectedConvent(null)} 
       />
-      
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <>
-          {filteredConvents.length === 0 ? (
-            <div className="text-center py-12">
-              <h3 className="text-xl font-medium text-gray-700">No convents found matching your search</h3>
-              <p className="text-gray-500 mt-2">Try different search terms or filters</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              {filteredConvents.map(convent => (
-                <ConventCard 
-                  key={convent.id} 
-                  convent={convent} 
-                  onClick={() => setSelectedConvent(convent)}
-                />
-              ))}
-            </div>
-          )}
-        </>
-      )}
-      
-      {selectedConvent && (
-        <ConventModal 
-          convent={selectedConvent} 
-          onClose={() => setSelectedConvent(null)} 
-        />
-      )}
-      
-      <footer className="mt-16 text-center text-gray-600 py-6 border-t">
-        <p>© {new Date().getFullYear()} Bangalore Province, Bethany Congregation</p>
-        <p className="mt-2">All information is for educational purposes only</p>
-      </footer>
-    </div>
+    )}
+  </div>
+   <footer className="mt-16 text-center text-white font-medium text-sm py-11 border-t  bg-[#b71c1c]">
+  <p>© {new Date().getFullYear()} Bangalore Province, Bethany Congregation</p>
+  <p className="mt-2">All information is for educational purposes only</p>
+</footer>
+
+
+
+</div>
+
   );
 };
 
