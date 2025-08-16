@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiX, FiMail, FiPhone, FiMapPin, FiBookOpen, FiCalendar, FiShare2, FiArrowUp } from 'react-icons/fi';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaPrayingHands } from 'react-icons/fa';
 
@@ -102,42 +103,42 @@ const localImages = [
 ];
 
 const SLIDES = [
-  { 
-    img: hero1,
-    title: 'Welcome to Bethany Congregation',
-    desc: 'A life of service, compassion, and prayer'
+  {
+    img: hero1
+    // title: 'Welcome to Bethany Congregation',
+    // desc: 'A life of service, compassion, and prayer'
   },
-  { 
-    img: hero2,
-    title: 'Serving Communities Worldwide',
-    desc: 'Dedicated to uplifting those in need'
+  {
+    img: hero2
+    // title: 'Serving Communities Worldwide',
+    // desc: 'Dedicated to uplifting those in need'
   },
-  { 
-    img: hero3,
-    title: 'Join Our Spiritual Journey',
-    desc: 'Experience faith, hope and love'
+  {
+    img: hero3
+    // title: 'Join Our Spiritual Journey',
+    // desc: 'Experience faith, hope and love'
   }
 ];
 
 const TOP_STORIES_DATA = [
-  { 
+  {
     img: story1,
-    title: 'Annual Retreat 2025', 
-    desc: 'Join us for our annual spiritual retreat in the mountains of Kerala', 
+    title: 'Annual Retreat 2025',
+    desc: 'Join us for our annual spiritual retreat in the mountains of Kerala',
     date: 'Oct 15-22, 2025',
     category: 'Events'
   },
-  { 
+  {
     img: story2,
-    title: 'New Education Initiative', 
-    desc: 'Launching free education programs for underprivileged children', 
+    title: 'New Education Initiative',
+    desc: 'Launching free education programs for underprivileged children',
     date: 'Sep 1, 2025',
     category: 'Ministries'
   },
-  { 
+  {
     img: story3,
-    title: 'Charity Mission in Nepal', 
-    desc: 'Our sisters provided aid to earthquake victims in remote villages', 
+    title: 'Charity Mission in Nepal',
+    desc: 'Our sisters provided aid to earthquake victims in remote villages',
     date: 'Aug 28, 2025',
     category: 'Outreach'
   }
@@ -146,24 +147,24 @@ const TOP_STORIES_DATA = [
 // Create more stories for pagination
 const ALL_STORIES = [
   ...TOP_STORIES_DATA,
-  { 
+  {
     img: story1,
-    title: 'Community Outreach Program', 
-    desc: 'Expanding our services to rural communities in Karnataka', 
+    title: 'Community Outreach Program',
+    desc: 'Expanding our services to rural communities in Karnataka',
     date: 'Jul 15, 2025',
     category: 'Outreach'
   },
-  { 
+  {
     img: story2,
-    title: 'Education Scholarship Awards', 
-    desc: 'Awarding scholarships to 50 deserving students this year', 
+    title: 'Education Scholarship Awards',
+    desc: 'Awarding scholarships to 50 deserving students this year',
     date: 'Jun 20, 2025',
     category: 'Education'
   },
-  { 
+  {
     img: story3,
-    title: 'New Chapel Inauguration', 
-    desc: 'Blessing of our new chapel in Bangalore diocese', 
+    title: 'New Chapel Inauguration',
+    desc: 'Blessing of our new chapel in Bangalore diocese',
     date: 'May 5, 2025',
     category: 'Events'
   }
@@ -192,14 +193,14 @@ const PUBLICATIONS_IMAGES = [
   { src: pub3, alt: "Waves of Mercy" }
 ];
 
-const EVENTS = [
-  { title: 'Annual Retreat', date: 'Oct 15-22, 2025', location: 'Bethany Retreat Center, Kerala' },
-  { title: 'Charity Gala Dinner', date: 'Nov 5, 2025', location: 'Grand Hyatt, Mumbai' },
-  { title: 'Christmas Carol Service', date: 'Dec 20, 2025', location: 'St. Mary Cathedral, Bangalore' },
-  { title: 'Youth Leadership Camp', date: 'Jan 10-15, 2026', location: 'Bethany Youth Center, Goa' },
-  { title: 'Easter Celebration', date: 'Apr 12, 2026', location: 'Bethany Mother House, Mangalore' },
-  { title: 'Founder\'s Day', date: 'Mar 8, 2026', location: 'All Bethany Institutions' }
-];
+// const EVENTS = [
+//   { title: 'Annual Retreat', date: 'Oct 15-22, 2025', location: 'Bethany Retreat Center, Kerala' },
+//   { title: 'Charity Gala Dinner', date: 'Nov 5, 2025', location: 'Grand Hyatt, Mumbai' },
+//   { title: 'Christmas Carol Service', date: 'Dec 20, 2025', location: 'St. Mary Cathedral, Bangalore' },
+//   { title: 'Youth Leadership Camp', date: 'Jan 10-15, 2026', location: 'Bethany Youth Center, Goa' },
+//   { title: 'Easter Celebration', date: 'Apr 12, 2026', location: 'Bethany Mother House, Mangalore' },
+//   { title: 'Founder\'s Day', date: 'Mar 8, 2026', location: 'All Bethany Institutions' }
+// ];
 
 const videoIds = [
   '5Me4Xnul6vc',
@@ -314,13 +315,13 @@ const HeroSlider = () => {
       
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
         <div className={`transition-transform duration-1000 ${current === 0 ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{SLIDES[current].title}</h1>
-          <p className="text-xl text-white max-w-2xl mb-8">{SLIDES[current].desc}</p>
+          {/* <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{SLIDES[current].title}</h1>
+          <p className="text-xl text-white max-w-2xl mb-8">{SLIDES[current].desc}</p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button icon={<FiBookOpen />}>Learn More</Button>
+            {/* <Button icon={<FiBookOpen />}>Learn More</Button>
             <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
               Join Us
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
@@ -343,9 +344,7 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === current ? 'bg-white w-6' : 'bg-white/50'
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${ index === current ? 'bg-white w-6' : 'bg-white/50'}`}
           />
         ))}
       </div>
@@ -360,6 +359,7 @@ const HeroSlider = () => {
 };
 
 const AboutSection = () => {
+  
   const [showMore, setShowMore] = useState(false);
   
   return (
@@ -396,7 +396,11 @@ const AboutSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
-              <Button icon={<FiBookOpen />}>Our History</Button>
+              
+              <Link to="/about">
+                <Button icon={<FiBookOpen />}>Our History</Button>
+              </Link>
+              
               <Button variant="outline" onClick={() => setShowMore(!showMore)}>
                 {showMore ? 'Show Less' : 'Read More'}
               </Button>
@@ -463,7 +467,7 @@ const TopStories = () => {
               <p className="text-gray-600 mb-6">
                 Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
               </p>
-              <div className="flex justify-between items-center mt-8">
+              {/* <div className="flex justify-between items-center mt-8">
                 <Button>Read Full Story</Button>
                 <div className="flex space-x-3">
                   <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200">
@@ -476,7 +480,7 @@ const TopStories = () => {
                     <FiShare2 className="text-gray-600" />
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </Modal>
@@ -537,13 +541,13 @@ const MinistriesSection = () => {
                     Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
                   </p>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <Button>Learn More</Button>
-                    <Button variant="outline">Support This Ministry</Button>
+                    {/* <Button>Learn More</Button>
+                    <Button variant="outline">Support This Ministry</Button> */}
                   </div>
                 </div>
               </div>
               
-              <div className="mt-8 pt-8 border-t border-gray-200">
+              {/* <div className="mt-8 pt-8 border-t border-gray-200">
                 <h4 className="text-xl font-bold text-gray-800 mb-4">Recent Activities</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {[1, 2, 3].map((item) => (
@@ -560,7 +564,7 @@ const MinistriesSection = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </Modal>
@@ -673,8 +677,8 @@ const MediaSection = () => {
                   <h3 className="font-bold text-gray-800 mb-2">{pub.alt}</h3>
                   <p className="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div className="flex justify-between">
-                    <Button variant="outline" className="text-sm py-2 px-4">Preview</Button>
-                    <Button className="text-sm py-2 px-4">Purchase</Button>
+                    {/* <Button variant="outline" className="text-sm py-2 px-4">Preview</Button>
+                    <Button className="text-sm py-2 px-4">Purchase</Button> */}
                   </div>
                 </div>
               </div>
@@ -696,135 +700,135 @@ const MediaSection = () => {
   );
 };
 
-const EventsSection = () => {
-  const [activeEvents, setActiveEvents] = useState(EVENTS);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+// const EventsSection = () => {
+//   const [activeEvents, setActiveEvents] = useState(EVENTS);
+//   const [selectedEvent, setSelectedEvent] = useState(null);
   
-  const filterEvents = (filter) => {
-    setActiveEvents(EVENTS);
-  };
+//   const filterEvents = (filter) => {
+//     setActiveEvents(EVENTS);
+//   };
   
-  return (
-    <section id="events" className="py-20 bg-red-50">
-      <div className="container mx-auto px-4">
-        <SectionTitle subtitle="Join us for our upcoming events and gatherings">
-          Events Calendar
-        </SectionTitle>
+//   return (
+//     <section id="events" className="py-20 bg-red-50">
+//       <div className="container mx-auto px-4">
+//         <SectionTitle subtitle="Join us for our upcoming events and gatherings">
+//           Events Calendar
+//         </SectionTitle>
         
-        <div className="flex justify-center mb-8 overflow-x-auto">
-          <div className="inline-flex bg-white rounded-full shadow-sm">
-            <button 
-              className="px-4 sm:px-6 py-2 rounded-l-full border-r border-gray-200 hover:bg-gray-50"
-              onClick={() => filterEvents('all')}
-            >
-              All Events
-            </button>
-            <button 
-              className="px-4 sm:px-6 py-2 border-r border-gray-200 hover:bg-gray-50"
-              onClick={() => filterEvents('retreats')}
-            >
-              Retreats
-            </button>
-            <button 
-              className="px-4 sm:px-6 py-2 border-r border-gray-200 hover:bg-gray-50"
-              onClick={() => filterEvents('charity')}
-            >
-              Charity
-            </button>
-            <button 
-              className="px-4 sm:px-6 py-2 rounded-r-full hover:bg-gray-50"
-              onClick={() => filterEvents('youth')}
-            >
-              Youth
-            </button>
-          </div>
-        </div>
+//         <div className="flex justify-center mb-8 overflow-x-auto">
+//           <div className="inline-flex bg-white rounded-full shadow-sm">
+//             <button 
+//               className="px-4 sm:px-6 py-2 rounded-l-full border-r border-gray-200 hover:bg-gray-50"
+//               onClick={() => filterEvents('all')}
+//             >
+//               All Events
+//             </button>
+//             <button 
+//               className="px-4 sm:px-6 py-2 border-r border-gray-200 hover:bg-gray-50"
+//               onClick={() => filterEvents('retreats')}
+//             >
+//               Retreats
+//             </button>
+//             <button 
+//               className="px-4 sm:px-6 py-2 border-r border-gray-200 hover:bg-gray-50"
+//               onClick={() => filterEvents('charity')}
+//             >
+//               Charity
+//             </button>
+//             <button 
+//               className="px-4 sm:px-6 py-2 rounded-r-full hover:bg-gray-50"
+//               onClick={() => filterEvents('youth')}
+//             >
+//               Youth
+//             </button>
+//           </div>
+//         </div>
         
-        <div className="max-w-4xl mx-auto">
-          {activeEvents.map((event, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-xl shadow-md mb-6 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => setSelectedEvent(event)}
-            >
-              <div className="p-6 flex items-start">
-                <div className="bg-red-100 text-red-800 rounded-xl p-4 flex flex-col items-center justify-center mr-6">
-                  <div className="text-2xl font-bold">15</div>
-                  <div className="text-sm">OCT</div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">{event.title}</h3>
-                  <div className="flex items-center text-gray-600 mb-2">
-                    <FiCalendar className="mr-2" />
-                    {event.date}
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <FiMapPin className="mr-2" />
-                    {event.location}
-                  </div>
-                </div>
-                <button className="bg-red-700 text-white p-2 rounded-full hover:bg-red-800">
-                  <FiChevronRight />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+//         <div className="max-w-4xl mx-auto">
+//           {activeEvents.map((event, index) => (
+//             <div 
+//               key={index} 
+//               className="bg-white rounded-xl shadow-md mb-6 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+//               onClick={() => setSelectedEvent(event)}
+//             >
+//               <div className="p-6 flex items-start">
+//                 <div className="bg-red-100 text-red-800 rounded-xl p-4 flex flex-col items-center justify-center mr-6">
+//                   <div className="text-2xl font-bold">15</div>
+//                   <div className="text-sm">OCT</div>
+//                 </div>
+//                 <div className="flex-1">
+//                   <h3 className="text-xl font-bold text-gray-800 mb-1">{event.title}</h3>
+//                   <div className="flex items-center text-gray-600 mb-2">
+//                     <FiCalendar className="mr-2" />
+//                     {event.date}
+//                   </div>
+//                   <div className="flex items-center text-gray-600">
+//                     <FiMapPin className="mr-2" />
+//                     {event.location}
+//                   </div>
+//                 </div>
+//                 <button className="bg-red-700 text-white p-2 rounded-full hover:bg-red-800">
+//                   <FiChevronRight />
+//                 </button>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
         
-        <div className="text-center mt-8">
-          <Button>View Full Calendar</Button>
-        </div>
+//         <div className="text-center mt-8">
+//           <Button>View Full Calendar</Button>
+//         </div>
         
-        <Modal isOpen={!!selectedEvent} onClose={() => setSelectedEvent(null)}>
-          {selectedEvent && (
-            <div className="p-8">
-              <div className="flex flex-col md:flex-row items-start">
-                <div className="bg-red-100 text-red-800 rounded-xl p-6 flex flex-col items-center justify-center mr-0 md:mr-8 mb-6 md:mb-0">
-                  <div className="text-4xl font-bold">15</div>
-                  <div className="text-lg">OCT</div>
-                  <div className="text-sm mt-2">2025</div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-800 mb-2">{selectedEvent.title}</h3>
-                  <div className="flex items-center text-gray-600 mb-4">
-                    <FiCalendar className="mr-2" />
-                    {selectedEvent.date} | 9:00 AM - 5:00 PM
-                  </div>
-                  <div className="flex items-center text-gray-600 mb-6">
-                    <FiMapPin className="mr-2" />
-                    {selectedEvent.location}
-                  </div>
-                  <p className="text-gray-700 mb-6">
-                    Join us for our annual retreat in the beautiful mountains of Kerala. This spiritual gathering will focus on finding inner peace and strengthening our connection to God through prayer, meditation, and community activities. All are welcome to attend this transformative experience.
-                  </p>
-                  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <Button icon={<FiCalendar />}>Add to Calendar</Button>
-                    <Button variant="outline">Share Event</Button>
-                  </div>
-                </div>
-              </div>
+//         <Modal isOpen={!!selectedEvent} onClose={() => setSelectedEvent(null)}>
+//           {selectedEvent && (
+//             <div className="p-8">
+//               <div className="flex flex-col md:flex-row items-start">
+//                 <div className="bg-red-100 text-red-800 rounded-xl p-6 flex flex-col items-center justify-center mr-0 md:mr-8 mb-6 md:mb-0">
+//                   <div className="text-4xl font-bold">15</div>
+//                   <div className="text-lg">OCT</div>
+//                   <div className="text-sm mt-2">2025</div>
+//                 </div>
+//                 <div className="flex-1">
+//                   <h3 className="text-3xl font-bold text-gray-800 mb-2">{selectedEvent.title}</h3>
+//                   <div className="flex items-center text-gray-600 mb-4">
+//                     <FiCalendar className="mr-2" />
+//                     {selectedEvent.date} | 9:00 AM - 5:00 PM
+//                   </div>
+//                   <div className="flex items-center text-gray-600 mb-6">
+//                     <FiMapPin className="mr-2" />
+//                     {selectedEvent.location}
+//                   </div>
+//                   <p className="text-gray-700 mb-6">
+//                     Join us for our annual retreat in the beautiful mountains of Kerala. This spiritual gathering will focus on finding inner peace and strengthening our connection to God through prayer, meditation, and community activities. All are welcome to attend this transformative experience.
+//                   </p>
+//                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+//                     <Button icon={<FiCalendar />}>Add to Calendar</Button>
+//                     <Button variant="outline">Share Event</Button>
+//                   </div>
+//                 </div>
+//               </div>
               
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-xl font-bold text-gray-800 mb-4">Event Gallery</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                  {[1,2,3,4].map(item => (
-                    <div key={item} className="aspect-square rounded-lg overflow-hidden">
-                      <img 
-                        src={`https://picsum.photos/300/300?random=${item}`} 
-                        alt={`Event ${item}`} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-        </Modal>
-      </div>
-    </section>
-  );
-};
+//               <div className="mt-8 pt-8 border-t border-gray-200">
+//                 <h4 className="text-xl font-bold text-gray-800 mb-4">Event Gallery</h4>
+//                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+//                   {[1,2,3,4].map(item => (
+//                     <div key={item} className="aspect-square rounded-lg overflow-hidden">
+//                       <img 
+//                         src={`https://picsum.photos/300/300?random=${item}`} 
+//                         alt={`Event ${item}`} 
+//                         className="w-full h-full object-cover"
+//                       />
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+//           )}
+//         </Modal>
+//       </div>
+//     </section>
+//   );
+// };
 
 const Footer = () => {
   return (
@@ -875,9 +879,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 bg-red-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
-        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-      }`}
+      className={`fixed bottom-6 right-6 bg-red-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${ isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
     >
       <FiArrowUp size={24} />
     </button>
@@ -893,7 +895,7 @@ export default function Home() {
         <TopStories />
         <MinistriesSection />
         <MediaSection />
-        <EventsSection />
+        {/* <EventsSection /> */}
       </main>
       <Footer />
       <BackToTop />

@@ -103,6 +103,7 @@ const achievementImages = [
     id: 1, 
     title: "Doctorate Ceremony", 
     src: achievement1,
+    
     desc: "Sister receiving doctorate degree in Theology"
   },
   { 
@@ -333,10 +334,28 @@ const About = () => {
     preloadImages(imagesToPreload).catch(console.error);
   }, []);
 
-  // Open lightbox with selected image
-  const openLightbox = (image) => {
-    setLightboxImage(image);
+  const openLightbox = (images, index) => {
+    setLightboxImage({ images, index });
     setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxImage(null);
+  };
+
+  const showNextImage = () => {
+    if (!lightboxImage) return;
+    const { images, index } = lightboxImage;
+    const nextIndex = (index + 1) % images.length;
+    setLightboxImage({ images, index: nextIndex });
+  };
+
+  const showPrevImage = () => {
+    if (!lightboxImage) return;
+    const { images, index } = lightboxImage;
+    const prevIndex = (index - 1 + images.length) % images.length;
+    setLightboxImage({ images, index: prevIndex });
   };
 
   // Navigate galleries
@@ -360,40 +379,34 @@ const About = () => {
         <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
           <button 
             className="absolute top-4 right-4 text-white text-3xl"
-            onClick={() => setLightboxOpen(false)}
+            onClick={closeLightbox}
           >
             <FaTimes />
           </button>
           <div className="relative max-w-6xl w-full">
             <ImageWithFallback
-              src={lightboxImage.src}
-              alt={lightboxImage.title}
+              src={lightboxImage.images[lightboxImage.index].src}
+              alt={lightboxImage.images[lightboxImage.index].title}
               className="w-full max-h-[70vh] object-contain mx-auto"
             />
             <div className="text-white text-center mt-4 text-xl">
-              {lightboxImage.title}
+              {lightboxImage.images[lightboxImage.index].title}
             </div>
-            {lightboxImage.desc && (
+            {lightboxImage.images[lightboxImage.index].desc && (
               <div className="text-white text-center mt-2 opacity-80">
-                {lightboxImage.desc}
+                {lightboxImage.images[lightboxImage.index].desc}
               </div>
             )}
           </div>
           <button 
             className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full"
-            onClick={() => prevImage(
-              lightboxImage.gallerySetter, 
-              lightboxImage.galleryLength
-            )}
+            onClick={showPrevImage}
           >
             <FaChevronLeft />
           </button>
           <button 
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full"
-            onClick={() => nextImage(
-              lightboxImage.gallerySetter, 
-              lightboxImage.galleryLength
-            )}
+            onClick={showNextImage}
           >
             <FaChevronRight />
           </button>
@@ -516,26 +529,23 @@ const About = () => {
                   <div 
                     key={img.id}
                     className="cursor-pointer"
-                    onClick={() => openLightbox({
-                      ...img,
-                      gallerySetter: null,
-                      galleryLength: historyImages.length
-                    })}
+                    onClick={() => openLightbox(historyImages, idx)}
                   >
                     <ImageWithFallback
                       src={img.src}
                       alt={img.title}
                       className="w-full h-64 object-cover rounded-xl"
+                      
                     />
                   </div>
                 ))}
               </div>
-              <button 
+              {/* <button 
                 className="mt-4 text-blue-800 font-medium flex items-center gap-2"
                 onClick={() => openLightbox(historyImages[0])}
               >
                 <FaSearch /> View Historical Gallery
-              </button>
+              </button> */}
             </motion.div>
             
             <motion.div className="md:w-1/2" variants={itemVariants}>
@@ -585,7 +595,8 @@ const About = () => {
                 <ImageWithFallback
                   src={founderImages[founderGalleryIndex].src}
                   alt={founderImages[founderGalleryIndex].title}
-                  className="w-full h-[500px] object-cover rounded-xl"
+                  className="w-full h-[500px] object-contain rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-blue-500"
+                      
                 />
                 <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-lg max-w-md">
                   <h3 className="text-xl font-bold">{founderImages[founderGalleryIndex].title}</h3>
@@ -756,7 +767,10 @@ const About = () => {
                 <ImageWithFallback
                   src={historyImages[0].src}
                   alt="Spiritual Practices"
-                  className="w-full h-64 object-cover rounded-xl"
+                  
+                  className="w-full h-auto max-h-64 object-contain rounded-xl  
+               transition-transform duration-300 ease-in-out 
+               hover:scale-105 hover:shadow-lg hover:border-blue-500"
                 />
               </div>
               <div className="md:w-2/3">
@@ -979,11 +993,11 @@ const About = () => {
             
             <motion.div className="md:w-1/2" variants={itemVariants}>
               <div className="grid grid-cols-2 gap-4">
-                {formationImages.map((img) => (
+                {formationImages.map((img, idx) => (
                   <div 
                     key={img.id}
                     className="cursor-pointer"
-                    onClick={() => openLightbox(img)}
+                    onClick={() => openLightbox(formationImages, idx)}
                   >
                     <ImageWithFallback
                       src={img.src}
@@ -994,15 +1008,15 @@ const About = () => {
                 ))}
               </div>
               <div className="mt-4 flex justify-between">
-                <button 
+                {/* <button 
                   className="text-blue-800 font-medium flex items-center gap-2"
                   onClick={() => openLightbox(formationImages[0])}
                 >
                   <FaSearch /> View Formation Gallery
-                </button>
-                <button className="text-blue-800 font-medium flex items-center gap-2">
+                </button> */}
+                {/* <button className="text-blue-800 font-medium flex items-center gap-2">
                   <FaPlus /> See More
-                </button>
+                </button> */}
               </div>
             </motion.div>
           </div>
@@ -1077,14 +1091,7 @@ const About = () => {
                   <div 
                     key={img.id}
                     className="relative cursor-pointer"
-                    onClick={() => {
-                      setInstitutionGalleryIndex(img.id - 1);
-                      openLightbox({
-                        ...img,
-                        gallerySetter: setInstitutionGalleryIndex,
-                        galleryLength: institutionImages.length
-                      });
-                    }}
+                    onClick={() => openLightbox(institutionImages, institutionImages.findIndex(i => i.id === img.id))}
                   >
                     <ImageWithFallback
                       src={img.src}
@@ -1195,7 +1202,7 @@ const About = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 ">
             {[
               { 
                 title: "Academic Excellence", 
@@ -1215,7 +1222,9 @@ const About = () => {
             ].map((item, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white bg-opacity-10 p-6 rounded-2xl backdrop-blur-sm border border-white border-opacity-20"
+                className="p-6 rounded-xl shadow-md 
+                 transition-transform duration-300 ease-in-out 
+                 hover:scale-105 hover:shadow-lg hover:border-blue-500"
                 variants={itemVariants}
               >
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
@@ -1233,7 +1242,9 @@ const About = () => {
               <ImageWithFallback
                 src={achievementImages[achievementGalleryIndex].src}
                 alt={achievementImages[achievementGalleryIndex].title}
-                className="w-full h-96 object-cover rounded-xl"
+                className="w-full h-auto max-h-64 object-contain rounded-xl  
+               transition-transform duration-300 ease-in-out 
+               hover:scale-105 hover:shadow-lg hover:border-blue-500"
               />
               <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-lg max-w-md">
                 <h3 className="text-xl font-bold">{achievementImages[achievementGalleryIndex].title}</h3>
@@ -1388,9 +1399,9 @@ const About = () => {
             className="mt-12 text-center"
             variants={itemVariants}
           >
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors">
+            {/* <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors">
               View Complete Memorial
-            </button>
+            </button> */}
           </motion.div>
         </motion.section>
       </div>

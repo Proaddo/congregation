@@ -5,6 +5,8 @@ import About from "./pages/about";
 import VocationAnimation from "./pages/VocationAnimation";
 import Contact from "./pages/contact";
 import BangaloreProvince from './components/BangaloreProvince';
+import { Button } from "@/components/ui/button";
+
 
 
 import ComeAndSee from './pages/ComeAndSee';
