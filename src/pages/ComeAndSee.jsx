@@ -246,8 +246,8 @@ const ComeAndSee = () => {
 
         
        {/* Footer */}
-       <footer className="mt-16 py-8 text-center text-white border-t border-blue-200 bg-[#b71c1c]">
-  {/* Removed "Come & See" block */}
+       {/* <footer className="mt-16 py-8 text-center text-white border-t border-blue-200 bg-[#b71c1c]">
+  
   
   <p>© {new Date().getFullYear()} Come & See Candidacy Program</p>
   <p className="mt-2 text-sm">Bethany Convent, 123 Religious Avenue, Spiritville</p>
@@ -264,7 +264,7 @@ const ComeAndSee = () => {
       Prayer Request
     </a>
   </div>
-</footer>
+</footer> */}
  </div>
     </div>
   );
