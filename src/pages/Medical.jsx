@@ -5,8 +5,10 @@ import hospitalCare from '../assets/medical/hospital-care.jpg';
 import communityHealth from '../assets/medical/community-health.jpg';
 import elderlyCare from '../assets/medical/elderly-care.jpg';
 import prayerHealing from '../assets/medical/prayer-healing.jpg';
+import {useNavigate } from "react-router-dom";
 
 const Medical= () => {
+  const navigate = useNavigate();
   return (
     <div className="font-sans bg-gray-50">
       {/* Hero Section */}
@@ -203,12 +205,12 @@ const Medical= () => {
             Taking inspiration from the Founder, we offer our services whether small or great, institutional or non-institutional.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-teal-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-              Volunteer
+            <button onClick={() => navigate("/contact")} className="bg-white text-teal-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+              Contact Us
             </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+            {/* <button className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
               Donate
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

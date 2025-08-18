@@ -4,8 +4,10 @@ import pastoralImage1 from '../assets/pastoral1.jpg';
 import pastoralImage2 from '../assets/pastoral2.jpg';
 import founderImage from '../assets/founder.jpg';
 import blaImage from '../assets/bla.jpg';
+import {useNavigate } from "react-router-dom";
 
 const Pastoral = () => {
+  const navigate = useNavigate();
   return (
     <div className="font-sans text-gray-800 bg-white">
       {/* Hero Section */}
@@ -363,7 +365,7 @@ const Pastoral = () => {
         <Container className="relative">
           <Row className="justify-content-center">
             <Col lg={8} className="text-center">
-              <div className="bg-white p-8 rounded-xl shadow-2xl">
+              <div className="bg-white/70 p-8 rounded-x shadow-2xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Our Mission Call
                 </h2>
@@ -372,9 +374,12 @@ const Pastoral = () => {
                   "Each of us is sent-forth into this world for a particular purpose. Mission is to live with that awareness 
                   that I am on this earth to do God's work, and to commit myself to it with a willing heart."
                 </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-                  Join Our Mission
-                </button>
+                 <button
+      onClick={() => navigate("/contact")}
+      className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg"
+    >
+      Join Our Mission
+    </button>
               </div>
             </Col>
           </Row>
