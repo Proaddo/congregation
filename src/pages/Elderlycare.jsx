@@ -4,6 +4,7 @@ import elderlyCare2 from '../assets/elder/elderlycare2.jpg';
 import elderlyCare3 from '../assets/elder/elderlycare3.jpg';
 import elderlyCare4 from '../assets/elder/elderlycare4.jpg';
 import elderlyCare5 from '../assets/elder/elderlycare5.jpg';
+import { Link } from 'react-router-dom';
 
 
 const CareElderly = () => {
@@ -21,9 +22,9 @@ const CareElderly = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Compassionate Care for the Elderly</h1>
             <p className="text-xl md:text-2xl mb-8">Continuing the mission of Bethany to serve the most vulnerable in society with love and dignity</p>
-            <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">
+            {/* <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">
               Learn About Our Homes
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -127,12 +128,12 @@ const CareElderly = () => {
             Your support helps us continue Christ's mission of compassion and care for our elderly brothers and sisters.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">
+            {/* <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">
               Donate Now
-            </button>
-            <button className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">
-              Volunteer
-            </button>
+            </button> */}
+             <Link to="/contact"> <button className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">
+              Join Us
+            </button> </Link>
           </div>
         </div>
       </div>

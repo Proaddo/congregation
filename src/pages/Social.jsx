@@ -4,6 +4,7 @@ import Mission1 from '../assets/social/mission1.jpg';
 import missionImage from '../assets/social/mission.jpg';
 import empowermentImage from '../assets/social/empowerment.jpg';
 import communityImage from '../assets/social/community.jpg';
+import { Link } from 'react-router-dom';
 
 const Social = () => {
   return (
@@ -179,9 +180,9 @@ const Social = () => {
           <p className="text-xl text-gray-700 mb-8">
             Inspired by the spirit of the Founder, Bethany continues to bring the Good News of liberation to all even beyond the centenary.
           </p>
-          <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+          <Link to ="/contact"><button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
             Get Involved
-          </button>
+          </button> </Link>
         </div>
       </section>
     </div>

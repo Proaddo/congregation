@@ -9,6 +9,7 @@ import historical2 from '../assets/founder/historical2.jpg';
 import historical3 from '../assets/founder/historical3.jpg';
 import historical4 from '../assets/founder/historical4.jpg';
 import visitors from '../assets/founder/visitors.jpg';
+import { Link } from 'react-router-dom';
 
 const FounderMemorial = () => {
   // All 10 images are now properly imported above
@@ -154,9 +155,9 @@ const FounderMemorial = () => {
                   <h3 className="text-xl font-semibold text-blue-800">Hours</h3>
                   <p>Monday-Saturday: 9AM-5PM<br/>Sunday: 12PM-4PM</p>
                 </div>
-                <button className="bg-blue-700 text-white px-6 py-3 rounded-lg mt-4">
+                <Link to ="/contact"> <button className="bg-blue-700 text-white px-6 py-3 rounded-lg mt-4">
                   Request Guided Tour
-                </button>
+                </button> </Link>
               </div>
             </div>
           </div>
