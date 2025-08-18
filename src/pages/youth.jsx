@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import youth1 from '../assets/youth/youth-1.jpg';
 import youth2 from '../assets/youth/youth-2.jpg';
 import youth3 from '../assets/youth/youth-3.jpg';
@@ -6,6 +8,8 @@ import youth4 from '../assets/youth/youth-4.jpg';
 import youth5 from '../assets/youth/youth-5.jpg';
 
 const Youth = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Hero Section */}
@@ -21,12 +25,7 @@ const Youth = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Youth Ministry</h1>
             <p className="text-xl md:text-2xl mb-8">Empowering young people to be agents of transformation in Church and society</p>
             <div className="flex justify-center gap-4">
-              <button className="bg-white text-purple-700 px-8 py-3 rounded-lg font-semibold hover:bg-purple-100 transition duration-300">
-                Join Our Programs
-              </button>
-              <button className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition duration-300">
-                Learn More
-              </button>
+             
             </div>
           </div>
         </div>
@@ -210,12 +209,14 @@ const Youth = () => {
             Become part of a vibrant community growing in faith, leadership, and service.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-purple-700 px-8 py-3 rounded-lg font-semibold hover:bg-purple-100 transition duration-300">
-              Register Now
-            </button>
-            <button className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition duration-300">
-              Contact Us
-            </button>
+           
+           <button
+            onClick={() => navigate('/contact')}
+             className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition duration-300"
+             >
+             Contact Us
+              </button>
+
           </div>
         </div>
       </section>

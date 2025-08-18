@@ -298,29 +298,27 @@ const StudentCandidacy = () => {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 py-8 text-center text-gray-600 border-t border-green-200">
-          <div className="mb-4">
-            <div className="inline-block bg-green-800 text-white text-xl font-bold px-6 py-2 rounded-lg mb-4">
-              Student Candidacy
-            </div>
-          </div>
-          <p>© {new Date().getFullYear()} Bethany Institute Student Candidacy Program</p>
-          <p className="mt-2 text-sm">123 Formation Road, Spiritual Heights, Faithville</p>
-          <div className="mt-4 flex justify-center space-x-4">
-            <a href="#" className="text-green-600 hover:text-green-800">
-              Contact Us
-            </a>
-            <span>•</span>
-            <a href="#" className="text-green-600 hover:text-green-800">
-              Vocation Resources
-            </a>
-            <span>•</span>
-            <a href="#" className="text-green-600 hover:text-green-800">
-              Prayer Request
-            </a>
-          </div>
-        </footer>
-      </div>
+      {/* Footer */}
+<footer className="mt-16 py-8 text-center text-white border-t border-blue-200 bg-[#b71c1c]">
+  {/* Removed the "Student Candidacy" button */}
+
+  <p>© {new Date().getFullYear()} Bethany Institute Student Candidacy Program</p>
+  <p className="mt-2 text-sm">123 Formation Road, Spiritual Heights, Faithville</p>
+  <div className="mt-4 flex justify-center space-x-4">
+    <a href="#" className="text-white hover:text-blue-100">
+      Contact Us
+    </a>
+    <span className="text-white">•</span>
+    <a href="#" className="text-white hover:text-blue-100">
+      Vocation Resources
+    </a>
+    <span className="text-white">•</span>
+    <a href="#" className="text-white hover:text-blue-100">
+      Prayer Request
+    </a>
+  </div>
+</footer>
+  </div>
     </div>
   );
 };
