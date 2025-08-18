@@ -20,9 +20,7 @@ const Hostel = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Hostel Ministry</h1>
             <p className="text-xl md:text-2xl mb-8">Empowering girls through education and holistic formation since 1922</p>
-            <button className="bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-amber-100 transition duration-300">
-              Learn About Our Hostels
-            </button>
+           
           </div>
         </div>
       </section>
