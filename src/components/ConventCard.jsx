@@ -2,15 +2,17 @@
 import React from 'react';
 
 const ConventCard = ({ convent, onClick }) => {
+  const displayImage = convent.image || (convent.images && convent.images[0]);
+
   return (
     <div 
       className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer border border-gray-100"
       onClick={onClick}
     >
       <div className="relative h-48">
-        {convent.image ? (
+        {displayImage ? (
           <img 
-            src={convent.image} 
+            src={displayImage} 
             alt={convent.title} 
             className="w-full h-full object-cover"
           />

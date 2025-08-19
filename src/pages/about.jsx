@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+// import { motion, AnimatePresence } from 'framer-motion';
 import { FaGraduationCap, FaChurch, FaUsers, FaSchool,FaHospital ,FaHandsHelping , FaCross,FaBook, FaHeart, FaChartBar, FaStar, FaPrayingHands, FaChevronRight, FaChevronLeft, FaSearch, FaPlus, FaTimes } from 'react-icons/fa';
 
 // Import all images
@@ -242,7 +242,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('history');
   const [founderGalleryIndex, setFounderGalleryIndex] = useState(0);
   const [achievementGalleryIndex, setAchievementGalleryIndex] = useState(0);
-  const [institutionGalleryIndex, setInstitutionGalleryIndex] = useState(0);
+  // const [institutionGalleryIndex, setInstitutionGalleryIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(null);
   const [expandedObituary, setExpandedObituary] = useState(null);
@@ -293,32 +293,32 @@ const About = () => {
     { year: "2022", event: "Sr. Rose Celine re-elected for second term" }
   ];
 
-  const missions = [
-    {
-      title: "Education Ministry",
-      icon: <FaSchool className="text-purple-600 text-3xl" />,
-      description: "Operating 150+ educational institutions serving over 100,000 students annually",
-      stats: "45 Schools, 15 Colleges, 5 Technical Institutes"
-    },
-    {
-      title: "Healthcare Services",
-      icon: <FaHospital className="text-purple-600 text-3xl" />,
-      description: "Providing affordable medical care through hospitals, clinics, and mobile health units",
-      stats: "25 Hospitals, 50 Clinics, 10 Specialized Care Centers"
-    },
-    {
-      title: "Social Welfare",
-      icon: <FaHandsHelping className="text-purple-600 text-3xl" />,
-      description: "Empowering marginalized communities through various social initiatives",
-      stats: "30 Orphanages, 15 Elderly Homes, 20 Community Centers"
-    },
-    {
-      title: "Pastoral Ministry",
-      icon: <FaCross className="text-purple-600 text-3xl" />,
-      description: "Nurturing spiritual growth through retreats, counseling, and parish services",
-      stats: "50 Parishes Served, 15 Retreat Centers, Annual Spiritual Programs"
-    }
-  ];
+  // const missions = [
+  //   {
+  //     title: "Education Ministry",
+  //     icon: <FaSchool className="text-purple-600 text-3xl" />,
+  //     description: "Operating 150+ educational institutions serving over 100,000 students annually",
+  //     stats: "45 Schools, 15 Colleges, 5 Technical Institutes"
+  //   },
+  //   {
+  //     title: "Healthcare Services",
+  //     icon: <FaHospital className="text-purple-600 text-3xl" />,
+  //     description: "Providing affordable medical care through hospitals, clinics, and mobile health units",
+  //     stats: "25 Hospitals, 50 Clinics, 10 Specialized Care Centers"
+  //   },
+  //   {
+  //     title: "Social Welfare",
+  //     icon: <FaHandsHelping className="text-purple-600 text-3xl" />,
+  //     description: "Empowering marginalized communities through various social initiatives",
+  //     stats: "30 Orphanages, 15 Elderly Homes, 20 Community Centers"
+  //   },
+  //   {
+  //     title: "Pastoral Ministry",
+  //     icon: <FaCross className="text-purple-600 text-3xl" />,
+  //     description: "Nurturing spiritual growth through retreats, counseling, and parish services",
+  //     stats: "50 Parishes Served, 15 Retreat Centers, Annual Spiritual Programs"
+  //   }
+  // ];
 
   // Preload images on component mount
   useEffect(() => {
