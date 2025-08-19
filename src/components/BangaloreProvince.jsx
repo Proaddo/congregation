@@ -208,7 +208,19 @@ const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrev
                     </div>
                 </div>
             </div>
-            {isZoomed && <ZoomedImageView src={images[currentImageIndex]} onClose={() => setIsZoomed(false)} />}
+            {isZoomed && (
+                <ZoomedImageView
+                    src={images[currentImageIndex]}
+                    onClose={() => setIsZoomed(false)}
+                    onNext={() => {
+                        onNextImage();
+                    }}
+                    onPrev={() => {
+                        onPrevImage();
+                    }}
+                    showNavButtons={images.length > 1}
+                />
+            )}
         </>
     );
 };

@@ -12,6 +12,11 @@ import img9 from "../assets/vocation/vocation9.jpg";
 import img10 from "../assets/vocation/vocation10.jpg";
 import img11 from "../assets/vocation/vocation11.jpg";
 import img12 from "../assets/vocation/vocation12.jpg";
+import bannerImg from '../vocation/banner.jpg';
+
+
+
+
 
 const VocationAnimation = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -84,24 +89,36 @@ const VocationAnimation = () => {
           </button>
         </div>
       )}
+             
+{/* Header */}
+<div className="relative h-[60vh]">
+  {/* Banner image */}
+  <img 
+    src={bannerImg} 
+    alt="Vocation Banner" 
+    className="w-full h-full object-cover"
+  />
 
-      {/* Header */}
-      <div className="relative h-[60vh] bg-gradient-to-r from-red-700 to-red-900">
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
-        <div className="relative flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Vocation Animation</h1>
-          <div className="text-xl text-white max-w-3xl">
-            <p className="mb-2 italic">"Vocations are born in prayer and only in prayer can they persevere and bear fruit"</p>
-            <p>- Pope Francis</p>
-          </div>
-          <button 
-            className="mt-8 bg-white text-red-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-100 transition-all"
-            onClick={() => document.getElementById('content').scrollIntoView({ behavior: 'smooth' })}
-          >
-            Explore Our Journey
-          </button>
-        </div>
-      </div>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-40" />
+
+  {/* Centered text over banner */}
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Vocation Animation</h1>
+    <div className="text-xl text-white max-w-3xl">
+      <p className="mb-2 italic">"Vocations are born in prayer and only in prayer can they persevere and bear fruit"</p>
+      <p>- Pope Francis</p>
+    </div>
+    <button 
+      className="mt-8 bg-white text-red-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-100 transition-all"
+      onClick={() => document.getElementById('content').scrollIntoView({ behavior: 'smooth' })}
+    >
+      Explore Our Journey
+    </button>
+  </div>
+</div>
+
+
 
       {/* Main Content */}
       <div id="content" className="max-w-6xl mx-auto px-4 py-16">

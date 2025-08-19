@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiX, FiMail, FiPhone, FiMapPin, FiBookOpen, FiCalendar, FiShare2, FiArrowUp } from 'react-icons/fi';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaPrayingHands } from 'react-icons/fa';
@@ -9,9 +11,17 @@ import hero2 from '../images/hero/hero2.jpg';
 import hero3 from '../images/hero/hero3.jpg';
 
 // Story images
-import story1 from '../images/stories/story1.jpg';
-import story2 from '../images/stories/story2.jpg';
-import story3 from '../images/stories/story3.jpg';
+import storie1 from '../images/stories/storie1.jpg';
+import storie2 from '../images/stories/storie2.jpg';
+import storie3 from '../images/stories/storie3.jpg';
+import storie4 from '../images/stories/storie4.jpg';
+import storie5 from '../images/stories/storie5.jpg';
+import storie6 from '../images/stories/storie6.jpg';
+import storie7 from '../images/stories/storie7.jpg';
+import storie8 from '../images/stories/storie8.jpg';
+import storie9 from '../images/stories/storie9.jpg';
+
+
 
 // Ministry images
 import vocation from '../images/ministries/vocation.jpg';
@@ -121,65 +131,132 @@ const SLIDES = [
 ];
 
 const TOP_STORIES_DATA = [
-  {
-    img: story1,
-    title: 'Annual Retreat 2025',
-    desc: 'Join us for our annual spiritual retreat in the mountains of Kerala',
-    date: 'Oct 15-22, 2025',
-    category: 'Events'
-  },
-  {
-    img: story2,
-    title: 'New Education Initiative',
-    desc: 'Launching free education programs for underprivileged children',
-    date: 'Sep 1, 2025',
-    category: 'Ministries'
-  },
-  {
-    img: story3,
-    title: 'Charity Mission in Nepal',
-    desc: 'Our sisters provided aid to earthquake victims in remote villages',
-    date: 'Aug 28, 2025',
-    category: 'Outreach'
-  }
+{
+  img: storie1,
+  title: 'Initiation into Sacred Heart Pre-Novitiate, Pakhal, Faridabad',
+  desc: 'On June 16, 2025, 14 affiliates were initiated into the Sacred Heart Pre-Novitiate in Pakhal, Northern Province, during a solemn ceremony led by Sr Erasma, Provincial Superior. The day began with a Holy Eucharist by Fr Abraham OCD, followed by a candlelight procession symbolizing the candidates\' spiritual journey. Sr Erasma spoke on the theme “Pilgrims of Hope: Call to Transformation unto Christ,” encouraging the affiliates to grow in the virtues of Jesus. A blessing was imparted, and a felicitation program followed, where new appointments were announced and heartfelt gratitude expressed. The event concluded joyfully with congratulations and a festive meal shared by all present.',
+  date: 'Oct 15-22, 2025',
+  category: 'Events'
+},
+{
+  img: storie2,
+  title: 'Initiation of Pre-Novices to Bethany Novitiate, Barasat',
+  desc: 'On June 13, 2025, 17 Pre-Novices were initiated into Bethany Novitiate, Barasat, Kolkata, after completing an enriching eight-day retreat. The candidates came from the Guwahati, Silchar, Northern, and Eastern Provinces and were warmly welcomed into their spiritual formation journey. The ceremony began with Sr Vijaya Pinto lighting the lamps of the Pre-Novices, symbolizing Christ\'s guiding light. Sr Benedicta Aranha formally initiated them, joined by Provincial Superiors Sr Erasma, Sr Jessy Maria, and Sr Clara Mendonca. The event marked a significant step in the Pre-Novices’ commitment to transformation in Christ.',
+  date: 'Sep 1, 2025',
+  category: 'Ministries'
+},
+
+{
+  img: storie3,
+  title: 'Installation of Sr Vijaya Pinto at Bethany Novitiate, Barasat',
+  desc: 'On June 12, 2025, Sr Vijaya Pinto was installed as the Superior and Novice Directress of Bethany Novitiate, Barasat, by Sr Benedicta Aranha, Provincial Superior of Guwahati Province. The ceremony was attended by Provincial Superiors from Northern, Eastern, and Silchar Provinces. Sr Vijaya was called to lead like the Good Shepherd—compassionately, faithfully, and rooted in Christ. Sr Benedicta expressed gratitude to Sr Jhansi for her three years of dedicated service and leadership. The day concluded with prayers, heartfelt felicitations, and blessings from the novices and community members.',
+  date: 'Aug 28, 2025',
+  category: 'Outreach'
+}
 ];
 
 // Create more stories for pagination
 const ALL_STORIES = [
   ...TOP_STORIES_DATA,
   {
-    img: story1,
-    title: 'Community Outreach Program',
-    desc: 'Expanding our services to rural communities in Karnataka',
+    img: storie4,
+    title: 'Called by Name on a Sacred journey',
+    desc: 'It was a memorable day as 23 affiliates from various parts of the country marched together into the portals of Bethany Pre-Novitiate, Bogadi on 09 June 2025, with a burning desire to follow Christ their Divine Master. Sr Sahana, the Provincial Superior of Bangalore Province, Sr Erasma, the Provincial Superior of Northern Province, Sr Jessy Maria, the Provincial Superior of Eastern Province, Sr Sally the Provincial Superior of Westen Province, Sr Judy the Provincial Superior of Southern Province and Sr Priya Rose the Provincial Councilor of Southern Province, Sr Ruth the Provincial Councilor of Guwahati Province, Sr Hilda Dias, the Pre-Novice Directress, and sisters from the provinces were present on the occasion.',
     date: 'Jul 15, 2025',
-    category: 'Outreach'
+    category: 'News'
   },
   {
-    img: story2,
-    title: 'Education Scholarship Awards',
-    desc: 'Awarding scholarships to 50 deserving students this year',
+    img: storie5,
+    title: 'Initiation Ceremony of Novices at Rosa Mystica Novitiate, Kinnikambla',
+    desc: 'Sr Sonia Dias, the Novice Directress, received the candidates at the entrance of the Novitiate by lighting their lamps. The formal initiation into the Novitiate formation was led by Sr Lilly Pereira, Provincial Superior of Mangalore Province. She was joined by Sr Erasma, Provincial Superior of Northern Province, Sr Jessy Maria, Provincial Superior of Eastern Province, Sr Sally, Provincial Superior of Western Province, Sr Mary Dikki, Provincial Councillor of Silchar Province, Sr Ruth Mao, Provincial Councillor of Guwahati Province, Sr Margarita, Provincial Councillor of Eastern Province and Sr Leena Pereira, Superior of Rosa Mystica Convent.',
     date: 'Jun 20, 2025',
-    category: 'Education'
+    category: 'News'
   },
   {
-    img: story3,
-    title: 'New Chapel Inauguration',
-    desc: 'Blessing of our new chapel in Bangalore diocese',
-    date: 'May 5, 2025',
-    category: 'Events'
-  }
+  img: storie6,
+  title: 'Canonical Erection of Bethany Convent, Gajendragad Blessing and Inauguration, Bethany English Medium Nursery School',
+  desc: `At the invitation of Most Rev Peter Machado, Bishop of Belgaum, Sisters of St Ann’s Bangalore (SAB) arrived at Gajendragad, Ron Taluk, Gadag District on 23rd May 2014 to render service in Holy Family Primary School under diocesan board of education Bethany’s mission was to reflect the compassionate love of Jesus, through pastoral ministry, education and social outreach. Rev Fr Alwyn Sudhir the then Belgaum Diocesan Education Board Secretary, officially handed over the school to Bethany Sisters. Sr Sarala SAB, the then Superior and headmistress of Holy Family Primary School and In-Charge of St Ann’s Kindergarten, facilitated the transfer of responsibilities.`,
+  date: 'May 5, 2025',
+  category: 'Events'
+},
+
+{
+  img: storie7,
+  title: 'A New Bloom in Rome for Bethany',
+  desc: `On the feast of St Joseph the Worker, a new community of Bethany was established in Romania, Rome — the 5th in Italy cum Vatican, and the 195th house of the Congregation. This milestone fulfilled a prophetic vision expressed in 1956 by the Founder, SD RFC. Mascarenhas, to one day become international. The dream of owning a house near the city of Rome became reality through the efforts of Sr Smitha and the leadership of Sr Latha and her team. The house will serve as a pastoral center and transit home for Bethany Sisters. Gratitude was extended to Bishops Carlo Bresciani and Lamba Riccardo for their support and guidance throughout this mission.`,
+  date: 'May 1, 2025',
+  category: 'News'
+},
+
+{
+  img: storie8,
+  title: 'Perpetual Profession and Twin Jubilee Celebration, Bethany Provincial House, Chevayur, Southern Province',
+  desc: `On April 22, 2022, the Bethany Provincial House at Chevayur observed a day of both sorrow and celebration. The community mourned the passing of Pope Francis, honoring his legacy with prayers and heartfelt remembrance of his compassionate leadership. On the same day, the Southern Province rejoiced in the Perpetual Profession of Sr Anju Johny and Sr Georgina Akkirala. Their commitment to God's call was celebrated as a sign of hope and renewal for the Church. The Province expressed deep gratitude to their families for offering their daughters in service to the Lord.`,
+  date: 'Apr 22, 2022',
+  category: 'News'
+},
+
+{
+  img: storie9,
+  title: 'Forever Yours, O Lord!',
+  desc: `On April 30, 2025, a sacred celebration took place at Good Shepherd Church, McMandro, Jharkhand, as Sr Fhilesita Sanga, Sr Kamala Kathrina Sinku, and Sr Sashita Palaka made their perpetual profession. With deep devotion, they offered their lives to Christ in the presence of their families and a supportive faith community. The solemn Holy Eucharist was presided over by Rt. Rev. Bishop Theodore Mascarenhas, alongside seven concelebrants. In his homily, the Bishop urged the sisters to remain fearless, rooted in Christ, and open to their mission. He also encouraged the parents to support their daughters’ religious commitment with faith and freedom.`,
+  date: 'Apr 30, 2025',
+  category: 'News'
+}
 ];
 
 const APOSTOLATE_DATA = [
-  { name: 'Vocation Animation', img: vocation, desc: 'Guiding youth in discovering their spiritual calling' },
-  { name: 'Educational Apostolate', img: education, desc: 'Providing quality education to all communities' },
-  { name: 'Pastoral Apostolate', img: pastoral, desc: 'Spiritual guidance and pastoral care services' },
-  { name: 'Social Apostolate', img: social, desc: 'Community development and social empowerment' },
-  { name: 'Health Care', img: healthcare, desc: 'Medical services for underserved communities' },
-  { name: 'Hostel Ministry', img: hostel, desc: 'Safe accommodations for students and workers' },
-  { name: 'Elderly Care', img: elderly, desc: 'Compassionate care for senior citizens' },
-  { name: 'Youth Ministry', img: youth, desc: 'Engaging and empowering young people' }
+  {
+    name: 'Vocation Animation',
+    img: vocation,
+    desc: 'Guiding youth in discovering their spiritual calling',
+    route: '/vocation-animation'
+  },
+  {
+    name: 'Educational Apostolate',
+    img: education,
+    desc: 'Providing quality education to all communities',
+    route: '/sacred-mission/educational'
+  },
+  {
+    name: 'Pastoral Apostolate',
+    img: pastoral,
+    desc: 'Spiritual guidance and pastoral care services',
+    route: '/sacred-mission/pastoral'
+  },
+  {
+    name: 'Social Apostolate',
+    img: social,
+    desc: 'Community development and social empowerment',
+    route: '/sacred-mission/social'
+  },
+  {
+    name: 'Health Care',
+    img: healthcare,
+    desc: 'Medical services for underserved communities',
+    route: '/sacred-mission/medical'
+  },
+  {
+    name: 'Hostel Ministry',
+    img: hostel,
+    desc: 'Safe accommodations for students and workers',
+    route: '/sacred-mission/hostels'
+  },
+  {
+    name: 'Elderly Care',
+    img: elderly,
+    desc: 'Compassionate care for senior citizens',
+    route: '/sacred-mission/care'
+  },
+  {
+    name: 'Youth Ministry',
+    img: youth,
+    desc: 'Engaging and empowering young people',
+    route: '/sacred-mission/youth'
+  }
 ];
+
+
 
 const NEWS_IMAGES = [
   { src: news1, alt: "Chronicle Bulletin" },
@@ -489,8 +566,9 @@ const TopStories = () => {
   );
 };
 
+
 const MinistriesSection = () => {
-  const [selectedApostolate, setSelectedApostolate] = useState(null);
+  const navigate = useNavigate();  // Step 1: get navigate function
   
   return (
     <section id="ministries" className="py-20 bg-gradient-to-b from-red-50 to-white">
@@ -504,7 +582,7 @@ const MinistriesSection = () => {
             <div 
               key={index} 
               className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out group cursor-pointer"
-              onClick={() => setSelectedApostolate(apostolate)}
+              onClick={() => navigate(apostolate.route)}  // Step 2: navigate on click
             >
               <div className="relative">
                 <img 
@@ -525,49 +603,8 @@ const MinistriesSection = () => {
           ))}
         </div>
         
-        <Modal isOpen={!!selectedApostolate} onClose={() => setSelectedApostolate(null)}>
-          {selectedApostolate && (
-            <div className="p-8">
-              <div className="flex flex-col md:flex-row items-start">
-                <img 
-                  src={selectedApostolate.img} 
-                  alt={selectedApostolate.name} 
-                  className="w-full md:w-1/3 h-64 object-cover rounded-xl"
-                />
-                <div className="md:ml-8 flex-1 mt-6 md:mt-0">
-                  <h3 className="text-3xl font-bold text-gray-800 mb-2">{selectedApostolate.name}</h3>
-                  <p className="text-gray-600 mb-6">
-                    {selectedApostolate.desc} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. 
-                    Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-                  </p>
-                  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    {/* <Button>Learn More</Button>
-                    <Button variant="outline">Support This Ministry</Button> */}
-                  </div>
-                </div>
-              </div>
-              
-              {/* <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-xl font-bold text-gray-800 mb-4">Recent Activities</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {[1, 2, 3].map((item) => (
-                    <div key={item} className="rounded-lg overflow-hidden shadow-md">
-                      <img 
-                        src={`https://picsum.photos/300/200?random=${item}`} 
-                        alt={`Activity ${item}`} 
-                        className="w-full h-32 object-cover"
-                      />
-                      <div className="p-3">
-                        <p className="text-sm font-medium text-gray-800">Activity Title {item}</p>
-                        <p className="text-xs text-gray-500">Location, Date</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
-            </div>
-          )}
-        </Modal>
+        {/* Step 3: Removed modal and related state */}
+        
       </div>
     </section>
   );

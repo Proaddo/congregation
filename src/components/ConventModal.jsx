@@ -1,6 +1,11 @@
 // src/components/ConventModal.jsx
 import React from 'react';
+<<<<<<< HEAD
 import { FiX, FiMapPin, FiPhone, FiCalendar, FiBook, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+=======
+import { FiX, FiMapPin, FiPhone, FiCalendar, FiBook } from 'react-icons/fi';
+import GalleryComponent from './GalleryComponent'; // ✅ STEP 1: Import added
+>>>>>>> 7e49d432fb7f58e4dab6e7890d6f81acd671bed3
 
 const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrevImage }) => {
   if (!convent) return null;
@@ -95,6 +100,14 @@ const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrev
                     </div>
                   </div>
                 )}
+
+                {/* ✅ STEP 2: Add gallery if thumbnails exist */}
+                {convent.thumbnails && (
+                  <div className="mt-8">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Photo Gallery</h3>
+                    <GalleryComponent images={convent.thumbnails} />
+                  </div>
+                )}
               </div>
               
               <div className="space-y-6">
@@ -135,18 +148,7 @@ const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrev
                     Contact This Convent
                   </button>
                 </div>
-                
-                {/* <div className="bg-white border border-gray-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-gray-800 mb-3">Photo Gallery</h4>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="aspect-square bg-gray-200 border-2 border-dashed rounded-xl border-gray-300"></div>
-                    <div className="aspect-square bg-gray-200 border-2 border-dashed rounded-xl border-gray-300"></div>
-                    <div className="aspect-square bg-gray-200 border-2 border-dashed rounded-xl border-gray-300"></div>
-                  </div>
-                  <button className="mt-3 text-indigo-600 text-sm font-medium w-full py-2">
-                    View All Photos
-                  </button>
-                </div> */}
+
               </div>
             </div>
           </div>
