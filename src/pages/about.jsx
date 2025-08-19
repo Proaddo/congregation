@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaGraduationCap, FaChurch, FaUsers, FaSchool,FaHospital ,FaHandsHelping , FaCross,FaBook, FaHeart, FaChartBar, FaStar, FaPrayingHands, FaChevronRight, FaChevronLeft, FaSearch, FaPlus, FaTimes } from 'react-icons/fa';
 
 // Import all images

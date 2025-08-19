@@ -126,7 +126,7 @@ const VocationAnimation = () => {
         <section className="mb-16">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-red-900 mb-6 flex items-center justify-center gap-3">
-              <FaSearch className="text-red-600" />
+              {/* <FaSearch className="text-red-600" /> */}
               Vocation Gallery
             </h2>
             <p className="text-gray-700">

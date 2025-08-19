@@ -72,7 +72,7 @@ const Topnav = () => {
             <img
               src="/src/assets/bethany-logo.png"
               alt="Bethany Logo"
-              className="h-20 w-auto object-contain rounded-full border-2 border-white shadow-lg" // Increased size
+              className="h-20 w-auto object-contain rounded-md border-2 border-white shadow-lg" // Increased size
             />
           </div>
 

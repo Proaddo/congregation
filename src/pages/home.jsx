@@ -39,9 +39,11 @@ import news2 from '../images/news/news2.jpg';
 import news3 from '../images/news/news3.jpg';
 
 // Publication images
-import pub1 from '../images/publications/pub1.jpg';
-import pub2 from '../images/publications/pub2.jpg';
-import pub3 from '../images/publications/pub3.jpg';
+import pub1 from '../images/publications/publication1.jpg';
+import pub2 from '../images/publications/publication2.jpg';
+import pub3 from '../images/publications/publication3.jpg';
+import  pub4 from '../images/publications/publication4.jpg';
+import  pub5 from '../images/publications/publication5.jpg';  
 
 // Gallery images
 import img1 from '../images/galleries/img1.jpg';
@@ -76,6 +78,7 @@ import img29 from '../images/galleries/img29.jpg';
 import img30 from '../images/galleries/img30.jpg';
 import img31 from '../images/galleries/img31.jpg';
 import img32 from '../images/galleries/img32.jpg';
+import about from '../images/publications/pub1.jpg';
 
 const localImages = [
   { src: img1, alt: 'Image 1' },
@@ -265,9 +268,12 @@ const NEWS_IMAGES = [
 ];
 
 const PUBLICATIONS_IMAGES = [
-  { src: pub1, alt: "An Indian Pearl" },
-  { src: pub2, alt: "A Shepherd's Heart" },
-  { src: pub3, alt: "Waves of Mercy" }
+  { src: pub1, alt: "Unless The Seed Die" },
+  { src: pub2, alt: "Bethany My Joy And My Crown" },
+  { src: pub3, alt: "Fullnes Of Life" },
+  { src: pub4, alt: "God Fell In Love With Me" },
+  { src: pub5, alt: "To You My Daughter" }
+
 ];
 
 // const EVENTS = [
@@ -450,7 +456,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src={pub1}
+                src={about}
                 alt="Bethany Sisters" 
                 className="w-full h-auto"
               />   
@@ -712,7 +718,7 @@ const MediaSection = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-gray-800 mb-2">{pub.alt}</h3>
-                  <p className="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  {/*<p className="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*/}
                   <div className="flex justify-between">
                     {/* <Button variant="outline" className="text-sm py-2 px-4">Preview</Button>
                     <Button className="text-sm py-2 px-4">Purchase</Button> */}
