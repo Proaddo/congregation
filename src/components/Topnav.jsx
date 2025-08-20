@@ -68,11 +68,11 @@ const Topnav = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-24"> {/* Increased height */}
           {/* Logo - Made larger */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ml-2">
             <img
               src="/src/assets/bethany-logo.png"
               alt="Bethany Logo"
-              className="h-20 w-auto object-contain rounded-md border-2 border-white shadow-lg" // Increased size
+              className="h-20 w-auto object-contain rounded-md border-2 border-white shadow-lg"
             />
           </div>
 
@@ -95,7 +95,7 @@ const Topnav = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-white hover:brightness-110 px-4 py-3 text-sm font-semibold block transition-colors" // Added px-4 py-3
+                    className="text-white hover:brightness-110 px-4 py-3 text-6 font-semibold block transition-colors" // Added px-4 py-3
                     onClick={() => {
                       setOpenMenu(null);
                       setOpenSubMenu(null);
