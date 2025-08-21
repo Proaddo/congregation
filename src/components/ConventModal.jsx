@@ -1,11 +1,8 @@
 // src/components/ConventModal.jsx
 import React from 'react';
-<<<<<<< HEAD
 import { FiX, FiMapPin, FiPhone, FiCalendar, FiBook, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-=======
-import { FiX, FiMapPin, FiPhone, FiCalendar, FiBook } from 'react-icons/fi';
 import GalleryComponent from './GalleryComponent'; // ✅ STEP 1: Import added
->>>>>>> 7e49d432fb7f58e4dab6e7890d6f81acd671bed3
+
 
 const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrevImage }) => {
   if (!convent) return null;
