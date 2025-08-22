@@ -2,6 +2,7 @@
 import React from 'react';
 
 // Import images from assets folder
+import SrShaletDsouza from "../assets/formators/Sr_Shalet_DSouza.jpg";
 import SrSavitha from '../assets/formators/sr_savitha.jpg';
 import SrLidwin from '../assets/formators/sr_lidwin.jpg';
 import SrSharlet from '../assets/formators/sr_sharlet.jpg';
@@ -18,20 +19,27 @@ const ComeAndSee = () => {
   const formators = [
     {
       id: 1,
+      name: "Sr Shalet DSouza",
+      role: "Directress",
+      image: SrShaletDsouza, // ✅ Use the correct image here
+      description: "Responsible for guiding candidates through their spiritual journey and formation process."
+    },
+     {
+      id: 2,
       name: "Sr M Savitha BS",
       role: "Formation Director",
       image: SrSavitha,
       description: "Responsible for guiding candidates through their spiritual journey and formation process."
     },
     {
-      id: 2,
+      id: 3,
       name: "Sr M Lidwin Veera Rebello BS",
       role: "Spiritual Director",
       image: SrLidwin,
       description: "Provides spiritual direction and helps candidates deepen their prayer life."
     },
     {
-      id: 3,
+      id: 4,
       name: "Sr Sharlet Rodrigues BS",
       role: "Academic Coordinator",
       image: SrSharlet,
@@ -209,40 +217,47 @@ const ComeAndSee = () => {
         </div>
 
         {/* Program Timeline */}
-        <section className="mt-16 bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-indigo-100">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-indigo-800 mb-2">Program Timeline</h2>
-            <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+{/* Program Timeline */}
+<section className="mt-16 bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-indigo-100">
+  <div className="text-center mb-8">
+    <h2 className="text-3xl font-bold text-indigo-800 mb-2">Program Timeline</h2>
+    <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+  </div>
+
+  <div className="relative max-w-4xl mx-auto">
+    {/* Vertical line */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-200"></div>
+
+    {/* Timeline items */}
+    {[
+      { id: 1, title: "Orientation", time: "1 Month", desc: "Introduction to community life and prayer" },
+      { id: 2, title: "Spiritual Formation", time: "3 Months", desc: "Deepening prayer life and relationship with Christ" },
+      { id: 3, title: "Academic Study", time: "4 Months", desc: "Theology, scripture, and language studies" },
+      { id: 4, title: "Apostolic Experience", time: "2 Months", desc: "Practical ministry and service opportunities" },
+      { id: 5, title: "Discernment", time: "1 Month", desc: "Personal reflection and vocational discernment" }
+    ].map((item, index) => (
+      <div
+        key={item.id}
+        className={`mb-12 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+      >
+        <div className="flex-1 px-4 py-2">
+          <div
+            className={`bg-white border-2 ${index % 2 === 0 ? 'border-indigo-500' : 'border-purple-500'} rounded-xl p-5 shadow-md`}
+          >
+            <h3 className="text-xl font-bold text-indigo-800 mb-2">{item.title}</h3>
+            <p className="text-indigo-600 font-medium mb-2">{item.time}</p>
+            <p className="text-gray-600">{item.desc}</p>
           </div>
-          
-          <div className="relative max-w-4xl mx-auto">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-200"></div>
-            
-            {/* Timeline items */}
-            {[
-              {id: 1, title: "Orientation", time: "1 Month", desc: "Introduction to community life and prayer"},
-              {id: 2, title: "Spiritual Formation", time: "3 Months", desc: "Deepening prayer life and relationship with Christ"},
-              {id: 3, title: "Academic Study", time: "4 Months", desc: "Theology, scripture, and language studies"},
-              {id: 4, title: "Apostolic Experience", time: "2 Months", desc: "Practical ministry and service opportunities"},
-              {id: 5, title: "Discernment", time: "1 Month", desc: "Personal reflection and vocational discernment"}
-            ].map((item, index) => (
-              <div key={item.id} className={`mb-12 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}>
-                <div className="flex-1 px-4 py-2">
-                  <div className={`bg-white border-2 ${index % 2 === 0 ? 'border-indigo-500' : 'border-purple-500'} rounded-xl p-5 shadow-md`}>
-                    <h3 className="text-xl font-bold text-indigo-800 mb-2">{item.title}</h3>
-                    <p className="text-indigo-600 font-medium mb-2">{item.time}</p>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </div>
-                </div>
-                <div className="w-16 h-16 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-lg z-10">
-                  {item.id}
-                </div>
-                <div className="flex-1"></div>
-              </div>
-            ))}
-          </div>
-        </section>
+        </div>
+        <div className="w-16 h-16 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-lg z-10">
+          {item.id}
+        </div>
+        <div className="flex-1"></div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         
        {/* Footer */}
@@ -271,7 +286,3 @@ const ComeAndSee = () => {
 };
 
 export default ComeAndSee;
-
-
-
-
