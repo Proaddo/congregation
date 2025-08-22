@@ -73,6 +73,18 @@ const ComeAndSee = () => {
     }
   ];
 
+  // Gallery images data
+  const galleryImages = [
+    { id: 1, src: Candidate1, alt: 'Community prayer session' },
+    { id: 2, src: Candidate2, alt: 'Candidate sharing her testimony' },
+    { id: 3, src: Candidate3, alt: 'Group study and discussion' },
+    { id: 4, src: Candidate4, alt: 'Serving the local community' },
+    // { id: 5, src: Candidate5, alt: 'A moment of quiet reflection' },
+    // { id: 6, src: Candidate6, alt: 'Joyful gathering of candidates' },
+    // { id: 7, src: SrSavitha, alt: 'Guidance from a formator' },
+    // { id: 8, src: SrLidwin, alt: 'Spiritual direction meeting' },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -244,34 +256,51 @@ const ComeAndSee = () => {
           </div>
         </section>
 
+        {/* Gallery Section - NEWLY ADDED */}
+        <section className="mt-16 bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-indigo-100">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-indigo-800 mb-2">Glimpses of Our Journey</h2>
+            <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+            <p className="mt-4 text-gray-600 max-w-md mx-auto">
+              Moments of prayer, community, study, and service that define the 'Come & See' experience.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {galleryImages.map((image) => (
+              <div key={image.id} className="overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-1 transition-all duration-300">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
         
-       {/* Footer */}
-       {/* <footer className="mt-16 py-8 text-center text-white border-t border-blue-200 bg-[#b71c1c]">
-  
-  
-  <p>© {new Date().getFullYear()} Come & See Candidacy Program</p>
-  <p className="mt-2 text-sm">Bethany Convent, 123 Religious Avenue, Spiritville</p>
-  <div className="mt-4 flex justify-center space-x-4">
-    <a href="#" className="text-white hover:text-blue-100">
-      Contact Us
-    </a>
-    <span className="text-white">•</span>
-    <a href="#" className="text-white hover:text-blue-100">
-      Vocation Resources
-    </a>
-    <span className="text-white">•</span>
-    <a href="#" className="text-white hover:text-blue-100">
-      Prayer Request
-    </a>
-  </div>
-</footer> */}
- </div>
+        {/* Footer */}
+        {/* <footer className="mt-16 py-8 text-center text-white border-t border-blue-200 bg-[#b71c1c]">
+
+
+        <p>© {new Date().getFullYear()} Come & See Candidacy Program</p>
+        <p className="mt-2 text-sm">Bethany Convent, 123 Religious Avenue, Spiritville</p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <a href="#" className="text-white hover:text-blue-100">
+            Contact Us
+          </a>
+          <span className="text-white">•</span>
+          <a href="#" className="text-white hover:text-blue-100">
+            Vocation Resources
+          </a>
+          <span className="text-white">•</span>
+          <a href="#" className="text-white hover:text-blue-100">
+            Prayer Request
+          </a>
+        </div>
+      </footer> */}
+   </div>
     </div>
   );
 };
 
 export default ComeAndSee;
-
-
-
-
