@@ -14,6 +14,11 @@ import Candidate4 from '../assets/candidates/candidate4.jpg';
 import Candidate5 from '../assets/candidates/candidate5.jpg';
 import Candidate6 from '../assets/candidates/candidate6.jpg';
 
+import comeandsee1 from '../images/formation/comeandsee1.jpg';
+import comeandsee2 from '../images/formation/comeandsee2.jpg';
+import comeandsee3 from '../images/formation/comeandsee3.jpg';
+import comeandsee4 from '../images/formation/comeandsee4.jpg';
+
 const ComeAndSee = () => {
   // Formators data
   const formators = [
@@ -83,10 +88,10 @@ const ComeAndSee = () => {
 
   // Gallery images data
   const galleryImages = [
-    { id: 1, src: Candidate1, alt: 'Community prayer session' },
-    { id: 2, src: Candidate2, alt: 'Candidate sharing her testimony' },
-    { id: 3, src: Candidate3, alt: 'Group study and discussion' },
-    { id: 4, src: Candidate4, alt: 'Serving the local community' },
+    { id: 1, src: comeandsee1, alt: 'Candidate sharing her testimony' },
+    { id: 2, src: comeandsee2, alt: 'Candidate sharing her testimony' },
+    { id: 3, src: comeandsee3, alt: 'Group study and discussion' },
+    { id: 4, src: comeandsee4, alt: 'Serving the local community' },
     // { id: 5, src: Candidate5, alt: 'A moment of quiet reflection' },
     // { id: 6, src: Candidate6, alt: 'Joyful gathering of candidates' },
     // { id: 7, src: SrSavitha, alt: 'Guidance from a formator' },
