@@ -206,7 +206,7 @@ const ImageWithFallback = ({ src, alt, className, fallback = "Image not availabl
         </div>
       )}
       {error ? (
-        <div className={`${className} bg-gray-100 flex items-center justify-center`}>
+        <div className={`${className} bg-black-100 flex items-center justify-center`}>
           <span className="text-gray-500">{fallback}</span>
         </div>
       ) : (

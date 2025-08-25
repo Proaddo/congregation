@@ -62,17 +62,18 @@ const Topnav = () => {
     },
     { label: "Contact", href: "/contact" },
   ];
-
+ 
+  
   return (
     <nav className="bg-gradient-to-r from-red-700 to-red-900 sticky top-0 z-50 shadow-lg">
-      <div className="max-w-8xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-24"> {/* Increased height */}
           {/* Logo - Made larger */}
-          <div >
+          <div className="flex items-center gap-4 ml-2">
             <img
               src="/src/assets/bethany-logo.png"
               alt="Bethany Logo"
-              className="h-20 w-auto  rounded-md border-2 border-white shadow-lg ml-24 mx-auto" // Increased height and added shadow
+              className="h-20 w-auto object-contain rounded-md border-2 border-white shadow-lg"
             />
           </div>
 
@@ -87,15 +88,15 @@ const Topnav = () => {
               >
                 {item.dropdown ? (
                   <button 
-                    className="text-white hover:brightness-110 px-4 py-3 flex items-center gap-1 text-lg font-bold transition-colors" // Added px-4 py-3
+                    className="text-white hover:brightness-110 px-4 py-3 flex items-center gap-1 text-sm font-semibold transition-colors" // Added px-4 py-3
                     onClick={() => handleMenuClick(idx)}
                   >
-                    {item.label} <ChevronDown className="w-4 h-4" />
+                    {item.label} <ChevronDown className="w-4 h-10" />
                   </button>
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-white hover:brightness-110 px-4 py-3 text-lg font-semibold block transition-colors" // Added px-4 py-3
+                    className="text-white hover:brightness-110 px-4 py-3 text-6 font-semibold block transition-colors" // Added px-4 py-3
                     onClick={() => {
                       setOpenMenu(null);
                       setOpenSubMenu(null);
@@ -109,7 +110,7 @@ const Topnav = () => {
                 {/* Dropdown */}
                 {item.dropdown && openMenu === idx && (
                   <div 
-                    className="absolute left-0 mt-0 w-56 bg-gradient-to-b from-red-700 to-red-900 text-white rounded-b shadow-xl z-50" // Changed shadow
+                    className="absolute left-0 mt-0 w-56 bg-gradient-to-b from-red-700 to-red-900 text-base text-white rounded-b shadow-xl z-50" // Changed shadow
                     onMouseEnter={() => !isClickMode && setOpenMenu(idx)}
                     onMouseLeave={() => !isClickMode && setOpenMenu(null)}
                   >
