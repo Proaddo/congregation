@@ -45,11 +45,12 @@ const Social = () => {
       <section className="py-16 px-4 bg-blue-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/3">
+            <div className="md:w-1/3 ">
               <img
                 src={Mission1}
                 alt="Servant of God RFC Mascarenhas"
-                className="w-full h-auto rounded-xl shadow-2xl object-contain"
+                className="w-full h-auto rounded-xl shadow-2xl object-contain 
+               transition-transform duration-300 ease-in-out hover:scale-90"
               />
             </div>
             <div className="md:w-2/3">
@@ -75,7 +76,7 @@ const Social = () => {
             <img
               src={missionImage}
               alt="Our Mission"
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
             <div className="p-8">
               <h2 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h2>
@@ -92,7 +93,7 @@ const Social = () => {
             <img
               src={empowermentImage}
               alt="Our Vision"
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-cover transition-transform duration-500 ease-in-out hover:scale-110"
             />
             <div className="p-8">
               <h2 className="text-2xl font-bold text-blue-900 mb-4">Our Vision</h2>

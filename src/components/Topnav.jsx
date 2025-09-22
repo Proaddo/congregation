@@ -22,7 +22,7 @@ const Topnav = () => {
   const navigationItems = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Blanglore Provinces", href: "/bangalore-province"},
+    { label: "Banglore Province", href: "/bangalore-province"},
     {
       label: "Formation",
       dropdown: [
@@ -57,7 +57,7 @@ const Topnav = () => {
       href: "/founders-memorial"
     },
     {
-      label: "superior-general-message",
+      label: "Superior General Message",
       href: "superior-general-message"
     },
     { label: "Contact", href: "/contact" },
@@ -78,7 +78,7 @@ const Topnav = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-0"> {/* Changed to space-x-0 */}
+          <div className="hidden lg:flex items-center space-x-1"> {/* Changed to space-x-0 */}
             {navigationItems.map((item, idx) => (
               <div
                 key={idx}
@@ -88,7 +88,7 @@ const Topnav = () => {
               >
                 {item.dropdown ? (
                   <button 
-                    className="text-white hover:brightness-110 px-4 py-3 flex items-center gap-1 text-sm font-semibold transition-colors" // Added px-4 py-3
+                    className="text-white hover:bg-white/20 hover:border-white hover:shadow-lg px-4 py-3 flex items-center gap-1 text-8 font-semibold transition-colors" // Added px-4 py-3
                     onClick={() => handleMenuClick(idx)}
                   >
                     {item.label} <ChevronDown className="w-4 h-10" />
@@ -96,7 +96,7 @@ const Topnav = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-white hover:brightness-110 px-4 py-3 text-6 font-semibold block transition-colors" // Added px-4 py-3
+                    className="text-white hover:bg-white/20 hover:border-red hover:shadow-lg px-4 py-3 text-8 font-semibold block transition-colors" // Added px-4 py-3
                     onClick={() => {
                       setOpenMenu(null);
                       setOpenSubMenu(null);

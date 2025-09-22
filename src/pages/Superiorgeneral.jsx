@@ -22,11 +22,11 @@ const SuperiorGeneralMessage = () => {
           {/* Image Section */}
           <div className="lg:w-1/3 flex justify-center">
             <div className="relative w-full max-w-xs">
-              <div className="aspect-w-3 aspect-h-4 w-full">
+              <div className="aspect-w-3 aspect-h-4 w-full group">
                 <img
                   src={superiorGeneralImage}
                   alt="Sr Rose Celine BS, Superior General"
-                  className="w-full h-full object-contain rounded-lg shadow-xl"
+                  className="w-full h-full object-contain rounded-lg shadow-xl border-2 border-transparent group-hover:border-4 group-hover:border-blue-700 transition-all duration-300 "
                 />
               </div>
               <div className="mt-4 text-center">

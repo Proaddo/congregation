@@ -68,12 +68,12 @@ const FounderMemorial = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 - Image 3 */}
-            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full">
-              <div className="h-64 bg-gray-100 flex items-center justify-center">
+            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full transform transition-transform duration-300 hover:scale-90">
+              <div className="h-64 bg-gray-100 flex items-center justify-center ">
                 <img
                   src={museumDisplay}
                   alt="Memorial Museum"
-                  className="h-full w-full object-contain p-4"
+                  className="h-full w-full object-contain p-4 "
                 />
               </div>
               <div className="p-6">
@@ -83,7 +83,7 @@ const FounderMemorial = () => {
             </div>
 
             {/* Feature 2 - Image 4 */}
-            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full">
+            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full transform transition-transform duration-300 hover:scale-90">
               <div className="h-64 bg-gray-100 flex items-center justify-center">
                 <img
                   src={founderStatue}
@@ -98,7 +98,7 @@ const FounderMemorial = () => {
             </div>
 
             {/* Feature 3 - Image 5 */}
-            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full">
+            <div className="bg-white text-gray-900 rounded-xl overflow-hidden shadow-xl h-full transform transition-transform duration-300 hover:scale-90">
               <div className="h-64 bg-gray-100 flex items-center justify-center">
                 <img
                   src={prayerArea}
@@ -120,17 +120,17 @@ const FounderMemorial = () => {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Historical Gallery</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
+            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center transform transition-transform duration-300 hover:scale-90">
               <img src={historical1} alt="Historical Photo 1" className="h-full w-full object-contain" />
             </div>
-            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center">
+            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center transform transition-transform duration-300 hover:scale-90">
               <img src={historical2} alt="Historical Photo 2" className="h-full w-full object-contain" />
             </div>
-            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center">
+            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center transform transition-transform duration-300 hover:scale-90">
               <img src={historical3} alt="Historical Photo 3" className="h-full w-full object-contain" />
             </div>
-            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center">
+            <div className="bg-white p-2 rounded-lg shadow h-64 flex items-center justify-center transform transition-transform duration-300 hover:scale-90">
               <img src={historical4} alt="Historical Photo 4" className="h-full w-full object-contain" />
             </div>
           </div>

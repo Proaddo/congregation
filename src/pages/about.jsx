@@ -556,10 +556,10 @@ const About = () => {
                 The first members were four lady teachers of St Sebastian School, namely, Flora Mathias (Sr M. Clare B.S.), Marcelline Menezes (Sr M. Martha B.S.), Alice Mathias (Sr M. Lourdes B.S.) and Regina Gertrude Gonsalves (Sr M. Gertrude B.S.). The Congregation was canonically erected on 28th July 1932, eleven years after its inception. The first Novitiate was opened on 15 May 1933. The first General Chapter of the Congregation was held in 1940 during which Sr M. Martha B.S, who was at the helm of the Infant Congregation from 1925, was elected canonically as the Superior General.
               </p>
               
-              <div className="relative border-l-2 border-purple-500 pl-8 ml-4 py-4 max-h-[500px] overflow-y-auto pr-4">
+              <div className="relative border-l-2 border-purple-500 pl-12 ml-4 py-4 max-h-[500px] overflow-y-auto pr-4">
                 {timelineEvents.map((event, index) => (
                   <div key={index} className="mb-8 relative">
-                    <div className="absolute -left-11 w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center">
+                    <div className="absolute -left-11 w-10 h-8 rounded-full bg-purple-500 flex items-center justify-center">
                       <span className="text-white font-bold">{event.year}</span>
                     </div>
                     <p className="text-gray-800">{event.event}</p>
