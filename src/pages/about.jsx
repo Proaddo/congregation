@@ -336,7 +336,7 @@ const About = () => {
 
   const openLightbox = (images, index) => {
     setLightboxImage({ images, index });
-    setLightboxOpen(true);
+    setLightboxOpen(true);   
   };
 
   const closeLightbox = () => {
@@ -464,7 +464,7 @@ const About = () => {
                 Explore Our Journey
               </button>
             </motion.div>
-          </div>
+          </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         </div>
       </div>
 
@@ -526,6 +526,9 @@ const About = () => {
             <motion.div className="md:w-1/2" variants={itemVariants}>
               <div className="grid grid-cols-2 gap-4">
                 {historyImages.map((img, idx) => (
+
+
+
                   <div 
                     key={img.id}
                     className="cursor-pointer"
@@ -554,7 +557,7 @@ const About = () => {
               </p>
               <p className="text-gray-700 mb-6">
                 The first members were four lady teachers of St Sebastian School, namely, Flora Mathias (Sr M. Clare B.S.), Marcelline Menezes (Sr M. Martha B.S.), Alice Mathias (Sr M. Lourdes B.S.) and Regina Gertrude Gonsalves (Sr M. Gertrude B.S.). The Congregation was canonically erected on 28th July 1932, eleven years after its inception. The first Novitiate was opened on 15 May 1933. The first General Chapter of the Congregation was held in 1940 during which Sr M. Martha B.S, who was at the helm of the Infant Congregation from 1925, was elected canonically as the Superior General.
-              </p>
+              </p> 
               
               <div className="relative border-l-2 border-purple-500 pl-12 ml-4 py-4 max-h-[500px] overflow-y-auto pr-4">
                 {timelineEvents.map((event, index) => (

@@ -1,6 +1,7 @@
 // src/components/BangaloreProvince.jsx
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Search, SlidersHorizontal, MapPin, Phone, Calendar } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Search, SlidersHorizontal, MapPin, Phone, Calendar, Mail,} from 'lucide-react';
+import { User } from "lucide-react";
 import convent1 from '../assets/convents/convent1.jpg';
 import convent2 from '../assets/convents/convent2.jpg';
 import convent3 from '../assets/convents/convent3.jpg';
@@ -62,6 +63,20 @@ import Staffstudent from '../assets/CISCE/Staffstudent.jpg';
 import Teachersmeet from '../assets/CISCE/Teachersmeet.jpg';
 import Visitation_welcoming from '../assets/CISCE/Visitation_welcoming.jpg';
 import Visitation from '../assets/CISCE/Visitation.jpg';
+import  KRNagarFoundation from '../assets/Joseph-Convent-KRNagar/KRNagar-FoundationDay.jpg';
+import KRNagarComty from '../assets/Joseph-Convent-KRNagar/KRNagar-ComtyPic.jpg';
+import Bogadi1 from '../assets/Bethany-Bogadi-Mysore/Bogadi1.jpg';
+import Bogadi2 from '../assets/Bethany-Bogadi-Mysore/Bogadi2.jpg';
+import Bogadi3 from '../assets/Bethany-Bogadi-Mysore/Bogadi3.jpg';
+import Ashram1 from '../assets/Jeevan-Jyothi-Ashram/Ashram1.jpg';
+import Ashram2 from '../assets/Jeevan-Jyothi-Ashram/Ashram2.jpg';
+import Ashram3 from '../assets/Jeevan-Jyothi-Ashram/Ashram3.jpg';
+import Jyoti1 from '../assets/Jyothi-Nilaya/Jyoti1.jpeg';
+import Jyoti2 from '../assets/Jyothi-Nilaya/Jyoti2.jpeg';
+import Jyoti3 from '../assets/Jyothi-Nilaya/Jyoti3.jpeg';
+import Fatima1 from '../assets/Fatima-Convent/Fatima1.jpg';
+import Fatima2 from '../assets/Fatima-Convent/Fatima2.jpg';
+import Fatima3 from '../assets/Fatima-Convent/Fatima3.jpg';
 
 
 // --- MOCK COMPONENTS TO FIX IMPORT ERRORS ---
@@ -156,7 +171,7 @@ const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrev
                             <p className="text-gray-600 mb-6">{convent.description}</p>
                             
                             <h3 className="text-xl font-semibold text-gray-700 mt-4 mb-2">Convent History</h3>
-                            <p className="text-gray-600 whitespace-pre-wrap">{convent.history}</p>
+                            <p className="text-gray-600 leading-relaxed whitespace-pre-wrap" style={{textAlign:"justify"}}>{convent.history}</p>
 
                             {/* Gallery inside Modal for any convent with multiple images */}
                             {convent.images && convent.images.length > 1 && (
@@ -202,6 +217,25 @@ const ConventModal = ({ convent, onClose, currentImageIndex, onNextImage, onPrev
                                             <p className="text-gray-600">{convent.established}</p>
                                         </div>
                                     </div>
+
+                                    <div className="flex items-start">
+                                        <User className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                                        <div>
+                                            <h4 className="font-semibold">Superior</h4>
+                                            <p className="text-gray-600">{convent.User}</p>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                    {(convent.Email || convent.MailID) && (
+                                        <div className="flex items-start">
+                                            <Mail className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                                            <div>
+                                                <h4 className="font-semibold">Email</h4>
+                                                <p className="text-gray-600">{convent.Email || convent.MailID}</p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                              </div>
                         </div>
@@ -306,7 +340,7 @@ const BangaloreProvince = () => {
 
 
                 { id: 4, title: "Fatima Convent, Dornahally", description: "Situated in the countryside, Fatima Convent operates...", history: `Dornahalli Parish is locally known as Christian Koppalu. Rev Fr R. F C Mascarenhas, the Founder of the Congregation, was in touch with the compassionate Pastor Rev. Fr I. H. Lobo, the Parish Priest of Dornahalli. He invited the Bethany Sisters to serve the people in their pastoral and economic needs. The Superior General, Mother Priscilla sent three sisters to open a a community on 21st May 1957. Sr Annunciata was appointed as Superior and Headmistress, and the members of the community were Sr Clare, one of the pioneers, Sr Xavier and Maggi bai. Fr Founder named the Convent as Fatima Convent in commemoration of the fortieth anniversary of Mother Mary’s apparition in Fatima on May 13th1917 a historic event
-                    Sisters started their Pastoral and Educational activities. Sr Azella and Sr Venera were in charge of the St Antony’s Shrine and stall. Dispensary was opened in 1958 and Sr Mida was in-charge of the dispensary. Rev. Fr Founder visited this rural area for the first time on 5thJuly in 1959. He made it holy by his presence. Good and genuine vocations have bloomed to Religious and Diocesan clergy due to the witnessing life of the Sisters. At present Sr Lorna is the Superior and Sr Madhu, Sr Lisia, Sr Mariline, Sr Canute, Sr Shanthi Clare, Sr Cecilia, Sr Shilpa Bakhita Menezes are the members.  Sisters continue their pastoral and educational apostolate with much zeal and vigour.`, image: convent4, address: "Fatima Street, Dornahally", contact: "08185-345678", established: "11.05.1957" },
+                    Sisters started their Pastoral and Educational activities. Sr Azella and Sr Venera were in charge of the St Antony’s Shrine and stall. Dispensary was opened in 1958 and Sr Mida was in-charge of the dispensary. Rev. Fr Founder visited this rural area for the first time on 5thJuly in 1959. He made it holy by his presence. Good and genuine vocations have bloomed to Religious and Diocesan clergy due to the witnessing life of the Sisters. At present Sr Lorna is the Superior and Sr Madhu, Sr Lisia, Sr Mariline, Sr Canute, Sr Shanthi Clare, Sr Cecilia, Sr Shilpa Bakhita Menezes are the members.  Sisters continue their pastoral and educational apostolate with much zeal and vigour.`, images: [convent4,Fatima1,Fatima2, Fatima3], address: "Dornahally (v) K.r.Nagara Tq,Mysore Dist Dornahally Post -571602", contact: "8296437795", established: "11.05.1957", Email:"jfatimaconvent1957@gmail.com", User:" Sister Savitha "},
 
 
                 { id: 5, title: "St. Martha’s Convent, Mudigere", description: "This convent manages a boarding school...", history: `Surrounded by dense green forest with tall and majestic trees, a third convent in Mysore diocese was opened on May 24th 1953 on the request of Fr Eduardo B Noronha, the parish priest of Mudigere, who contacted Mgr Raymond Mascarenhas. Mother Petra, Superior General of Bethany, obtained the permission to open the Convent from   Most  Rev. Bishop Rene Feuga, the Bishop of Mysore.   The convent was a memorial to Mother Martha, the first Superior General. The pioneering members were Sr Francis, Sr Bartholomea, Sr Paupera and Sr Laura. The house served as a classroom and boarding house as well as the residence to the sisters. Sr Francis was appointed as superior for a short period. Sr Pauline continued as superior. There were no catholic educational institutions for the education of the children of the poor estate labourers in and around Mudigere. So the institution began with a nursery class in Kannada medium on 1st June 1953 with 20 children. Permission was granted to commence the primary school on 30th May 1953.  Sr. Sylvia was appointed the headmistress. A boarding house was started with two children in 1953. St Martha’s High School was inaugurated on 1st June 1989 by Most Rev. John Baptist Sequeira, the Bishop of Chikmagaluru.  Sr Louisia was the High School Headmistress.  On July 1st 2006 Pre-University College was inaugurated by Sr Wilberta, the Superior General. Sr Trina was the first principal.`, image: convent5, address: "Martha Road, Mudigere", contact: "08263-456789", established: "24.05.1953" },
@@ -321,9 +355,11 @@ const BangaloreProvince = () => {
                 { id: 8, title: "Sacred Heart Convent, Basrikatte", description: "Nestled in the hills, this convent runs a retreat center...", history: `Sacred Heart Convent was opened at Basrikatte amidst the lush green hills and valleys, coffee and tea estates and silvery streams, by Mother Macrina, the then Superior General, at the request of Rev Fr Edwin Pinto, the then parish priest of Basrikatte, and Rev. Alphonsus Mathias, Bishop of Chickmagalur. The main purpose of starting the Convent was to cater to the educational needs of the children, to catechize people of estates and sub- station. Sister Clemence was the first Superior. Sr Euphrasia, Sr Peace and Sr Flavia were the pioneers.  On 30th April 1965 Fr Edwin Pinto blessed the renovated building and it was named Sacred Heart Convent after the patron of the parish.
                     On 1st June 1965 the sisters began classes in English Medium as well as in Kannada medium. The school was recognized and admitted to grant-in-aid in 1968 only with Kannada medium school. Besides education, they had a dispensary run by Sr Colette, who was also a trained teacher and trained nurse; she became the Superior and Headmistress of the School.`, image: convent8, address: "Sacred Heart Circle, Basrikatte", contact: "08262-678901", established: "24.04.1965" },
 
-                { id: 9, title: "St. Joseph’s Convent, K.R.Nagar", description: "This convent is known for its innovative farming techniques...", history: `St Joseph’s Convent, K. R. Nagar took root in 1968 in response to the divine call through Rev. Fr. Felix Tauro, Parish Priest of Dornahalli to have Christian presence in K.R.Nagar. At the request of Fr.Felix Tauro, the then Superior General, Mother Macrina, requested the Bishop of Mysore Rt Rev Mathias Fernandes and permission was granted to erect a community in K.R.Nagar. Sr.Laeta the first Superior along with Sr Myrrah, Sr Celine & Sr.Dancilla began living in a rented house availed by Mr.Y.K Ramachandra Rao. Wherein the Nursery class began on May 22nd 1967. The Primary English Medium School was opened on May 22nd 1968 with 135 children.Sr. Laeta was the Headmistress. A residence was built for sisters, blessed and inaugurated by Bishop Mathias Fernandes in 1976 and foundation for school building was also laid to cater to the educational needs of the people. In 1969 Bishop blessed the school building too, providing space for classes 2nd to 7th as the number of students too increased. To cater to the needs of less privileged children Kannada Medium Primary School was opened in 1988 headed by Sr.Tina. Sisters not only engaged in Educational apostolate but extended their service in the Parish, teaching Catechism, Prison ministry & other pastoral and social work. Sr M Simon BS is at present Superior,`, image: convent9, address: "Joseph Lane, K.R.Nagar", contact: "08223-789012", established: "09.07.1989" },
+                { id: 9, title: "St. Joseph’s Convent, K.R.Nagar", description: "This convent is known for its innovative farming techniques...", history: `St Joseph’s Convent, K. R. Nagar took root in 1968 in response to the divine call through Rev. Fr. Felix Tauro, Parish Priest of Dornahalli to have Christian presence in K.R.Nagar. At the request of Fr.Felix Tauro, the then Superior General, Mother Macrina, requested the Bishop of Mysore Rt Rev Mathias Fernandes and permission was granted to erect a community in K.R.Nagar. Sr.Laeta the first Superior along with Sr Myrrah, Sr Celine & Sr.Dancilla began living in a rented house availed by Mr.Y.K Ramachandra Rao. Wherein the Nursery class began on May 22nd 1967. The Primary English Medium School was opened on May 22nd 1968 with 135 children.Sr. Laeta was the Headmistress. A residence was built for sisters, blessed and inaugurated by Bishop Mathias Fernandes in 1976 and foundation for school building was also laid to cater to the educational needs of the people. In 1969 Bishop blessed the school building too, providing space for classes 2nd to 7th as the number of students too increased. To cater to the needs of less privileged children Kannada Medium Primary School was opened in 1988 headed by Sr.Tina. Sisters not only engaged in Educational apostolate but extended their service in the Parish, teaching Catechism, Prison ministry & other pastoral and social work. Sr M Simon BS is at present Superior,`, images: [convent9, KRNagarFoundation, KRNagarComty], address: "KR Nagar Post, Silver Road, Mysore 571 602", contact: "08223-295696", established: "09.07.1989", Superior:"Sr Reema BS ", MailID:"krnconvent@gmail.com"},
 
-                { id: 10, title: "Jyothi Nilaya, Bangalore", description: "Jyothi Nilaya serves as a home for senior sisters...", history: `Mother Macrina, the Superior General...`, image: convent10, address: "Light Street, Bangalore", contact: "080-23456789", established: "1990" },
+                { id: 10, title: "Jyothi Nilaya, Bangalore", description: "Jyothi Nilaya serves as a home for senior sisters...", history: `Mother Macrina, the Superior General...`, images: [convent10,Jyoti1,Jyoti2,Jyoti3], address: "Nehru Road Kacharkanahalli,St Thomas Town Post,Bangalore North Karnataka 560084", contact: "9448245128", established: "1990", Email:"jyothiconvent70@gmail.com", User:"Sr Precilla Fernandes"},
+
+
                 { id: 11, title: "Holy Cross Convent, Arsikere", description: "This convent specializes in healthcare...", history: `In 1966 Fr Mathias Noronha...`, image: convent11, address: "Cross Road, Arsikere", contact: "08173-890123", established: "15.05.1974" },
 
                 { id: 12, title: "St. Antony’s Convent, Ponnampet", description: "Located in a coffee-growing region...", history: `Ponnampet is a beautiful village with sweet scented coffee estates and cascading waterfalls in South Kodagu District. Most Rev. Mathias Fernandez, the Bishop of Mysuru invited the Bethany Sisters to Ponnampet to impart education to the children of the locality.  Mother Gemma, the Superior General, Mother Macrina, the former Superior General and Sr Verena, the Procurator General, accompanied the pioneers, Sr Eliza, Sr Clita, Sr Prabha, Sr Elize D’Souza and Sr Jessy Leena to Ponnampet on 21st May 1979.  The school started functioning from 22nd May 1979.  Most Rev. Mathias Fernandes blessed and laid the foundation stone for the convent building on 30th August 1979.  Sr Prabha was the Headmistress. The Convent building was blessed and inaugurated on 28th January 1981 by Most Rev. Mathias Fernandes. Mother Sylvine, the Superior General, Sr. Ann Teresa and Sr Noreen, her Councillors graced the occasion. The construction of the new convent building was blessed by Bishop Rt. Rev. Thomas Vazhapilly and inaugurated by Sr Lilitta, the Provincial Superior on 27th August 2015. At present Sr Tina is the superior, Sr Melvina, Sr Gratina, Sr Marie Amy, Sr Arogya Fernandes and Sr Bhakthi Prabha are the members. `, image: convent12, address: "Antony Street, Ponnampet", contact: "08272-901234", established: "01.06.1979" },
@@ -334,7 +370,7 @@ const BangaloreProvince = () => {
                 { id: 14, title: "Bethany Convent, Bogadi", description: "Specializing in special education...", history: `Mother Sylvine, the then Superior General, and Sr Dymphna, the then Provincial Superior of Bangalore Province, felt the need to open a study house in Mysore Diocese for the Sisters to pursue their studies in various disciplines, in the Manasa Gangothri University Mysore.  Most Rev. Francis Michealappa, the Bishop of Mysore, blessed the building on 9 July 1989. Sr Leata and Sr Misericors became the pioneers of this new community, engaging themselves in the socio-pastoral ministry in the surrounding area. The house served the needs of the sisters for their spiritual and academic pursuits 
                     Another purpose of establishing Bethany Convent, Bogadi, was to provide for the formation of various groups of Sisters. From 1993-2007 the house accommodated the formation of ‘Come and See’ candidates.
                     Sr Jyoti, the Superior General, Sr Bonita, the Provincial Superior of Bangalore Province, Sr Rose Ann, the Provincial Superior of Western Province with their councillors were present. 13 novices were initiated to the Novitiate on 15th June 2007. Bethany Novitiate community from 2007- 2016 has catered to 8 batches of novices, numbering 100 of them, under the guidance of  Sr Clarina, the Novice Directress and Sr Sharlet Mendonca, Sr Precilla Braggs, Sr Ranjitha, Sr Simprose and Sr Veena Laveena as assistant directresses successively. 
-`, image: convent14, address: "Bogadi Road, Mysore", contact: "0821-1234567", established: "09.07.1989" },
+`, images: [convent14,Bogadi1,Bogadi2,Bogadi3], address: "Bethany Convent,Bogadi,Mysore 570026", contact: "8660330935", established: "09.07.1989", Email:"bnovmysore@gmail.com"},
 
                 { id: 15, title: "Bethany Convent, Kable", description: "This convent focuses on rural development...", history: `Bethany Convent, Kable, is situated on the Western Ghat slopes along the Sahyadri Mountain ranges of Malnad. It was in 1990 Most Rev Bishop Ignatius Pinto, the Bishop of Shivamogga requested Mother Sylvine to open a convent to serve the parish school, to take up evangelization and social work. On the direction of the Bishop, Fr Philip, the parish priest, constructed the convent building. On 4th August 1990 the new community was opened in the diocese of Shivamogga. Sr Brigitte was appointed as the superior of the community and headmistress of St Francis Xavier’s Primary School, Sr Irene and Sr Madhu were pioneers. Sr Irene was fully engaged in pastoral apostolate.  Free boarding was started on 1st June 1993 by the diocese and the sisters took care of the boarding children. In 2003 the Sisters had their own convent building blessed by Bishop Gerald Isaac Lobo on May 6th 2003 and inaugurated by Sr Virginia, one of the General Councillors.  The Sisters are actively involved in Educational and pastoral as well as hostel ministry in St Francis Xavier’s Church Kable.`, image: convent15, address: "Kable Village Road", contact: "08282-2345678", established: "04.08.1990" },
 
@@ -345,7 +381,7 @@ const BangaloreProvince = () => {
                     The community was shifted to Vidyanagar to another rented house in 2015. At present Sr Evelyn is   in- charge of the community.  Sr Flora and Sr Anthony Mary are the members. The convent was affiliated to St Joseph Convent Sagar in the year 2015.  Sisters are actively engaged in prayer ministry, pastoral apostolate of family visits, teaching catechism in the parish and cultivate the land of the community.`, image: convent17, address: "Convent Road, Shimoga", contact: "08182-4567890", established: "30.05.2005" },
 
 
-                { id: 18, title: "Jeevan Jyothi Ashram, Mankale", description: "This ashram serves as a spiritual retreat center...", history: `Mgr Raymond F C Mascarenhas was enraptured by the vision of preaching the gospel to the poor. Sr Medela as Regional Superior and  Superior of St Joseph’s Convent, Sagar, was instrumental in procuring land at Mankale. Most Rev. Alphonsus Mathias, the Bishop of Chikmagalur, blessed the land and laid the foundation stone. Later Fr Augustine Fernandez blessed the building. It was named Jeevan Jyothi Ashram, a home for the poor children, to facilitate free accommodation and education. Sr Bernadette, Sr Nives and Sr Gonzaga were the pioneers. 25 children were accommodated. On 5th June 2004 Bethany Vocational Training Centre with hostel facility was blessed by Bishop Gerald Isaac Lobo and inaugurated by Sr Jyoti, the Superior General. On 6th September 2005, the Jeevan Jyothi community was canonically erected as an independent community. Bishop Gerald Isaac Lobo celebrated the Eucharist. Sr Winnifred, Sr Eucharia, Sr Flora and Sr Elvira were the members. Bethany Nursery School was started in 2006 to facilitate the English medium education of the local children. St Joseph’s High School was inaugurated on 14th September 2015 by Sr Lillis, the Asst Superior General. Bishop Francis Serrao of Shimoga blessed the building. Sr Ivilla was appointed as the Headmistress. At present Sr M Deena BS is the Superior and Sr Merlyn, Sr Priyalatha, Sr Carmelita and Sr Meena are the members.`, image: convent18, address: "Peace Lane, Mankale", contact: "08282-5678901", established: "05.07.2004" },
+                { id: 18, title: "Jeevan Jyothi Ashram", description: "This ashram serves as a spiritual retreat center...", history: `Mgr Raymond F C Mascarenhas was enraptured by the vision of preaching the gospel to the poor. Sr Medela as Regional Superior and  Superior of St Joseph’s Convent, Sagar, was instrumental in procuring land at Mankale. Most Rev. Alphonsus Mathias, the Bishop of Chikmagalur, blessed the land and laid the foundation stone. Later Fr Augustine Fernandez blessed the building. It was named Jeevan Jyothi Ashram, a home for the poor children, to facilitate free accommodation and education. Sr Bernadette, Sr Nives and Sr Gonzaga were the pioneers. 25 children were accommodated. On 5th June 2004 Bethany Vocational Training Centre with hostel facility was blessed by Bishop Gerald Isaac Lobo and inaugurated by Sr Jyoti, the Superior General. On 6th September 2005, the Jeevan Jyothi community was canonically erected as an independent community. Bishop Gerald Isaac Lobo celebrated the Eucharist. Sr Winnifred, Sr Eucharia, Sr Flora and Sr Elvira were the members. Bethany Nursery School was started in 2006 to facilitate the English medium education of the local children. St Joseph’s High School was inaugurated on 14th September 2015 by Sr Lillis, the Asst Superior General. Bishop Francis Serrao of Shimoga blessed the building. Sr Ivilla was appointed as the Headmistress. At present Sr M Deena BS is the Superior and Sr Merlyn, Sr Priyalatha, Sr Carmelita and Sr Meena are the members.`, images: [convent18,Ashram1,Ashram2,Ashram3], address: "Mankalale, Sagar, Shimoga Dist 577401", contact: "8105028182", established: "05.07.2004", Email: "jeevanjyothimankale@gmail.com", User:"Sr M Deena BS"},
 
                 { id: 19, title: "Bethany Convent, Madikeri", description: "Located in the hill station of Madikeri...", history: `Madikeri is the district headquarters of Kodagu. The Sisters of Northern Province of the Congregation were in search of a base in south-western India for the promotion of vocations to the missionary areas of North India.  Sr Agnella, the Superior General, approached Fr Gregorious Madapilly and Mgr Joseph Thelly, the Administrator of the diocese of Mysore. They cordially welcomed Bethany to Coorg deanery.  On 24th May 1995 Sr Salerine, Sr Mary Pinto, Sr Shirley and Lina along with Sr Agnella, the Superior General, Sr Miriam, the Provincial Superior of Northern Province and Mother Macrina landed in Madikeri to take up the ministry of education.  A building for the convent  was built  and Fr Gregorious, the parish priest of St Michael’s Church blessed the house.
 
@@ -374,16 +410,29 @@ const BangaloreProvince = () => {
                     id: 21,
                     title: "St.Joseph's Eng.Med.Hr.Pry.School, K.R.Nagar ",
                     description: " Theme: “Beat Plastic Pollution.” :Located in Opp Court B H Road near Taluk Office Henjagondanahalli Arsikere",
-                    history: `St. Joseph&#39;s English Medium Higher Primary School, K.R. Nagar Celebrated
-&quot;The world Environment Day&quot; on 05th June 2025. Spoorthy a student from 10 th
-std extended a warm welcome to the school correspondent Sr. Pushpa and the
-Headmistresses of three schools. A song &quot;Manegondu mara uurigondu vana&quot; was
-melodiously sung by the High school students. Annvika from class 10th spoke
-about Environmental conservation, the importance of a plastic -free Environment
-and it&#39;s significance in our campus. To signify the importance of the day all the
-staff and students were dressed in green colour. Each one, Plant one and many
-other slogans were proudly uttered by the students as we moved on a rally. This
-was indeed a meaningful celebration.`,
+                    history: ` “A Tribute to Talent and Success”
+                    The much awaited Zonal Level sports Meet brought together young
+athletes filled with enthusiasm, determination and team spirit. It was a true
+celebration of sportsmanship, discipline and hard work.
+“The harder the battle, the greater the Victory”. The words perfectly mirror
+the success of St.Joseph’s English Medium Higher Primary School K.R.Nagar,
+which emerged victorious at the Zonal Level championship which was held on
+21 st August 2025. Every game turned into a platform for our students to
+showcase their skills, confidence and dedication, as 90 participants represented
+our school at the zonal level. The athletes displayed remarkable skills and hard
+work and their dedication paid off as the boys secured 1 st place in Volley ball
+and Discus Throw and 2 nd place in Long Jump and High Jump followed by 400
+meters running 3 rd place. The girls team proudly claimed 1 st place in High
+Jump, Volley ball, Throw ball and Kabaddi, along with second place finishes
+Kho – Kho. Adding to this success, our athletes left a lasting mark by winning
+numerous individual awards, establishing a legacy of achievement that will be
+treasured within our institution.
+Noteworthy performances came from Chinmayi H.Y and Prarthana
+Pramod, two talented Grade VII students who brought great honour to our
+school. Chinmayi secured first place in both the 400 meters and 600 meters
+races, while Prarthana Pramod claimed first place in the 100 meters and 200
+meters events. Both earned the individual Championship Title and qualified for
+the Taluk Level.`,
                     images: [
                         Krnagar2,
                         Krnagar1,
