@@ -1,6 +1,6 @@
 import React from 'react';
 import socialHeroImage from '../assets/social/social-hero.jpg';
-import Mission1 from '../assets/social/mission1.jpg';
+import Mission1 from '../assets/social/Mission1.jpg';
 import missionImage from '../assets/social/mission.jpg';
 import empowermentImage from '../assets/social/empowerment.jpg';
 import communityImage from '../assets/social/community.jpg';
