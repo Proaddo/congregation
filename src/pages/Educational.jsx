@@ -7,7 +7,7 @@ import member3 from '../assets/formators/sr_savitha.jpg';
 import member4 from '../assets/formators/Sr. Simon BS.jpg';
 import expansionMap from '../assets/expansion-map.jpg';
 import convention1988 from '../assets/juniorate7.jpg';
-import convention2001 from '../assets/Juniorate6.jpg';
+import convention2001 from '../assets/juniorate6.jpg';
 import convention2008 from '../assets/Juniorate5.jpg';
 import jubileeCelebration from '../assets/convents/convent9.jpg';
 import jubileeEvent1 from '../assets/convents/convent10.jpg';
