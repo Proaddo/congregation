@@ -33,12 +33,12 @@ import Krnagar2 from  '../assets/St. Joseph’s Convent, K.R.Nagar/Krnagar2.jpg'
 import Krnagar3 from  '../assets/St. Joseph’s Convent, K.R.Nagar/Krnagar3.jpg';
 import Krnagar4 from  '../assets/St. Joseph’s Convent, K.R.Nagar/Krnagar4.jpg';
 import Krnagar5 from  '../assets/St. Joseph’s Convent, K.R.Nagar/Krnagar5.jpg';
-import Kannada_Arsikare1 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare1.jpg';
-import Kannada_Arsikare2 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare2.jpg';
-import Kannada_Arsikare3 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare3.jpg';
-import Kannada_Arsikare4 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare4.jpg';
-import Kannada_Arsikare5 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare5.jpg';
-import Kannada_Arsikare6 from '../assets/Kannada_Higher_School_Arsikere/kannada_arsikare6.jpg';
+import Kannada_Arsikare1 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare1.jpg';
+import Kannada_Arsikare2 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare2.jpg';
+import Kannada_Arsikare3 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare3.jpg';
+import Kannada_Arsikare4 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare4.jpg';
+import Kannada_Arsikare5 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare5.jpg';
+import Kannada_Arsikare6 from '../assets/Kannada_Higher_School_Arsikere/Kannada_arsikare6.jpg';
 import Kannada_sagar1 from '../assets/Kannada_Higher_School_Sagar/kannada_sagar1.jpg';
 import Kannada_sagar2 from '../assets/Kannada_Higher_School_Sagar/kannada_sagar2.jpg';
 import Kannada_sagar3 from '../assets/Kannada_Higher_School_Sagar/kannada_sagar3.jpg';
